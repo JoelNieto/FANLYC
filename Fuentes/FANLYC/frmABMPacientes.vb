@@ -1,12 +1,9 @@
 ﻿Public Class frmABMPacientes
 
     Public iNuevoPaciente As Boolean
-    Public Paciente As New clsPacientes
-
 
     Private Sub frmABMPacientes_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'DataSet1.TiposTelef' table. You can move, or remove it, as needed.
-        Me.TiposTelefTableAdapter.Fill(Me.DataSet1.TiposTelef)
+    
         Me.CenterToScreen()
         CargaControles()
         If iNuevoPaciente = True Then
@@ -21,9 +18,11 @@
             Campo.Add("id_paciente_tmp")
             Valor.Add(Paciente.IdPaciente.ToString)
             Tipo.Add("NÚMERO")
+
             If objScripts.Inserta("PacientesHeaderTmp", Campo, Tipo, Valor, objDataBase.Conexion) = False Then
                 MsgBox("Error al generar temporal")
             End If
+            InicializaPaciente()
         End If
     End Sub
 
@@ -194,6 +193,8 @@
     Private Sub datFecNac_ValueChanged(sender As System.Object, e As System.EventArgs) Handles datFecNac.ValueChanged
         txtEdad.Text = DateDiff(DateInterval.Year, datFecNac.Value, Now).ToString
         Paciente.FecNac = datFecNac.Value
+        Paciente.Edad = Val(txtEdad.Text)
+        Paciente.EdadMeses = CalculaEdadMes(datFecNac.Value)
     End Sub
 
     Private Sub txtNombre_LostFocus(sender As Object, e As System.EventArgs) Handles txtNombre.LostFocus
@@ -290,11 +291,5 @@
             GuardaTemporal()
         End If
     End Sub
-
-
-    Private Sub GuardaTemporal()
-
-    End Sub
-
 
 End Class

@@ -22,7 +22,7 @@ Partial Class frmABMPacientes
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmABMPacientes))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.tabDat = New System.Windows.Forms.TabPage()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
@@ -64,8 +64,6 @@ Partial Class frmABMPacientes
         Me.grdTelefono = New System.Windows.Forms.DataGridView()
         Me.colIndTelefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colTipoTel = New System.Windows.Forms.DataGridViewComboBoxColumn()
-        Me.TiposTelefBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DataSet1 = New FANLYC.DataSet1()
         Me.colTelefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.txtApellidoPadre = New System.Windows.Forms.TextBox()
@@ -91,7 +89,6 @@ Partial Class frmABMPacientes
         Me.cboDoctor = New System.Windows.Forms.ComboBox()
         Me.butEditar = New System.Windows.Forms.Button()
         Me.butGrabar = New System.Windows.Forms.Button()
-        Me.TiposTelefTableAdapter = New FANLYC.DataSet1TableAdapters.TiposTelefTableAdapter()
         Me.butSalir = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.tabDat.SuspendLayout()
@@ -102,8 +99,6 @@ Partial Class frmABMPacientes
         Me.tabContacto.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         CType(Me.grdTelefono, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TiposTelefBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox4.SuspendLayout()
         Me.tabMedica.SuspendLayout()
         Me.GroupBox7.SuspendLayout()
@@ -522,23 +517,10 @@ Partial Class frmABMPacientes
         '
         'colTipoTel
         '
-        Me.colTipoTel.DataSource = Me.TiposTelefBindingSource
-        Me.colTipoTel.DisplayMember = "txt_desc_telef"
         Me.colTipoTel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.colTipoTel.HeaderText = "Tipo"
         Me.colTipoTel.Name = "colTipoTel"
-        Me.colTipoTel.ValueMember = "cod_tipo_telef"
         Me.colTipoTel.Width = 125
-        '
-        'TiposTelefBindingSource
-        '
-        Me.TiposTelefBindingSource.DataMember = "TiposTelef"
-        Me.TiposTelefBindingSource.DataSource = Me.DataSet1
-        '
-        'DataSet1
-        '
-        Me.DataSet1.DataSetName = "DataSet1"
-        Me.DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'colTelefono
         '
@@ -776,7 +758,7 @@ Partial Class frmABMPacientes
         Me.butEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.butEditar.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.butEditar.ForeColor = System.Drawing.Color.White
-        Me.butEditar.Image = Global.FANLYC.My.Resources.Resources.unlocked48
+        Me.butEditar.Image = CType(resources.GetObject("butEditar.Image"), System.Drawing.Image)
         Me.butEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.butEditar.Location = New System.Drawing.Point(494, 390)
         Me.butEditar.Name = "butEditar"
@@ -793,7 +775,7 @@ Partial Class frmABMPacientes
         Me.butGrabar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.butGrabar.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.butGrabar.ForeColor = System.Drawing.Color.White
-        Me.butGrabar.Image = Global.FANLYC.My.Resources.Resources.locked48
+        Me.butGrabar.Image = CType(resources.GetObject("butGrabar.Image"), System.Drawing.Image)
         Me.butGrabar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.butGrabar.Location = New System.Drawing.Point(621, 390)
         Me.butGrabar.Name = "butGrabar"
@@ -803,10 +785,6 @@ Partial Class frmABMPacientes
         Me.butGrabar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.butGrabar.UseVisualStyleBackColor = False
         '
-        'TiposTelefTableAdapter
-        '
-        Me.TiposTelefTableAdapter.ClearBeforeFill = True
-        '
         'butSalir
         '
         Me.butSalir.BackColor = System.Drawing.Color.LightCoral
@@ -814,7 +792,7 @@ Partial Class frmABMPacientes
         Me.butSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.butSalir.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.butSalir.ForeColor = System.Drawing.Color.White
-        Me.butSalir.Image = Global.FANLYC.My.Resources.Resources.go_back48
+        Me.butSalir.Image = CType(resources.GetObject("butSalir.Image"), System.Drawing.Image)
         Me.butSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.butSalir.Location = New System.Drawing.Point(366, 390)
         Me.butSalir.Name = "butSalir"
@@ -838,6 +816,7 @@ Partial Class frmABMPacientes
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "frmABMPacientes"
         Me.Text = "Pacientes"
         Me.TabControl1.ResumeLayout(False)
@@ -852,8 +831,6 @@ Partial Class frmABMPacientes
         Me.tabContacto.ResumeLayout(False)
         Me.GroupBox5.ResumeLayout(False)
         CType(Me.grdTelefono, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TiposTelefBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
         Me.tabMedica.ResumeLayout(False)
@@ -927,9 +904,6 @@ Partial Class frmABMPacientes
     Friend WithEvents txtApellidoMadre As System.Windows.Forms.TextBox
     Friend WithEvents Label23 As System.Windows.Forms.Label
     Friend WithEvents Label22 As System.Windows.Forms.Label
-    Friend WithEvents DataSet1 As FANLYC.DataSet1
-    Friend WithEvents TiposTelefBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents TiposTelefTableAdapter As FANLYC.DataSet1TableAdapters.TiposTelefTableAdapter
     Friend WithEvents colIndTelefono As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colTipoTel As System.Windows.Forms.DataGridViewComboBoxColumn
     Friend WithEvents colTelefono As System.Windows.Forms.DataGridViewTextBoxColumn

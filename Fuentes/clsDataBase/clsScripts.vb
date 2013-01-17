@@ -90,6 +90,34 @@ Public Class clsScripts
 
     End Function
 
+    Public Sub EjecutaSP(SP As String, Parametros As List(Of String), Tipos As List(Of String), Conexion As SqlConnection)
+        Dim sSql As String
+        Dim sParametros As String
+        Dim sDeclare As String = ""
+        Dim DR As SqlDataReader
+
+        sSql = "EXEC " + SP
+
+        sParametros = " "
+
+        For Each Parametro As String In Parametros
+            If Parametros.IndexOf(Parametro) > 0 Then
+                sParametros = sParametros + ", "
+            End If
+            If Tipos(Parametros.IndexOf(Parametro).ToString) = "TEXTO" Then
+                Parametro = "'" + Parametro + "'"
+            End If
+            sParametros = sParametros + Parametro
+        Next
+
+        sSql = sSql + sParametros
+
+        Dim dc As New SqlCommand(sSql, Conexion)
+
+        DR = dc.ExecuteReader
+
+    End Sub
+
     Public Function BuscaUltimoIndice(Tablas As String, Indice As String, Condiciones As List(Of String), Filtros As List(Of String), Conexion As SqlConnection) As String
         Dim sSql As String
         Dim sCondiciones As String
@@ -138,4 +166,6 @@ Public Class clsScripts
         End Try
 
     End Function
+
+
 End Class

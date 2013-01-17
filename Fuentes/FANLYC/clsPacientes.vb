@@ -8,6 +8,7 @@
     Private iSexo As Integer
     Private dFecNac As Date
     Private iEdad As Integer
+    Private iEdadMes As Integer
     Private iProvincia As Integer
     Private iDistrito As Integer
     Private iCorregimiento As Integer
@@ -21,7 +22,6 @@
     Private iDiagnostico As Integer
     Private iDoctor As Integer
     Private oTelefonos As Object
-
 
     Public Property IdPaciente() As Integer
         Get
@@ -92,6 +92,15 @@
         End Get
         Set(value As Integer)
             iEdad = value
+        End Set
+    End Property
+
+    Public Property EdadMeses As Integer
+        Get
+            Return iEdadMes
+        End Get
+        Set(value As Integer)
+            iEdadMes = value
         End Set
     End Property
 

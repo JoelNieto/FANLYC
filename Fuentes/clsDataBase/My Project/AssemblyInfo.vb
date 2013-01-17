@@ -8,10 +8,10 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("clsDataBase")> 
-<Assembly: AssemblyDescription("")> 
+<Assembly: AssemblyTitle("libConexiones")> 
+<Assembly: AssemblyDescription("Librería de Clases de Conexiones")> 
 <Assembly: AssemblyCompany("")> 
-<Assembly: AssemblyProduct("clsDataBase")> 
+<Assembly: AssemblyProduct("libConexiones")> 
 <Assembly: AssemblyCopyright("Copyright ©  2013")> 
 <Assembly: AssemblyTrademark("")> 
 
