@@ -1,35 +1,7 @@
-﻿Imports System.Data.Sql
-Imports System.Data.SqlClient
-
-Module modConexiones
-    Public Conexion As New SqlConnection
-    Public CadenaConexion As String
-    Public ErrorDesc As String
-
-    Public Function ConectarBase() As Boolean
-        Try
-            CadenaConexion = System.Configuration.ConfigurationManager.ConnectionStrings("FANLYC").ConnectionString
-        Catch ex As Exception
-            ConectarBase = False
-            ErrorDesc = ex.Message
-            Exit Function
-        End Try
-        Conexion.ConnectionString = CadenaConexion
-        Try
-            Conexion.Open()
-        Catch ex As Exception
-            ConectarBase = False
-            ErrorDesc = ex.Message
-        End Try
-
-        If Conexion.State = ConnectionState.Open Then
-            ConectarBase = True
-        Else
-            ConectarBase = False
-        End If
-    End Function
-
-    Public Function Inserta(Tablas As String, Campos As List(Of String), Tipo As List(Of String), Valores As List(Of String)) As Boolean
+﻿Imports System.Data.SqlClient
+Imports System.Data.Sql
+Public Class clsScripts
+    Public Function Inserta(Tablas As String, Campos As List(Of String), Tipo As List(Of String), Valores As List(Of String), Conexion As SqlConnection) As Boolean
         Dim sSql As String
         Dim sCampos As String
         Dim sValores As String
@@ -77,7 +49,7 @@ Module modConexiones
 
     End Function
 
-    Public Function Elimina(Tablas As String, Condiciones As List(Of String), Valores As List(Of String), Optional bMantIndice As Boolean = False) As Boolean
+    Public Function Elimina(Tablas As String, Condiciones As List(Of String), Valores As List(Of String), Conexion As SqlConnection, Optional bMantIndice As Boolean = False) As Boolean
         Dim sSql As String
         Dim sCondiciones As String
 
@@ -118,36 +90,7 @@ Module modConexiones
 
     End Function
 
-    Public Function EjecutaSP(SP As String, Parametros As List(Of String), Tipos As List(Of String), Salida As List(Of Boolean)) As SqlDataReader
-        Dim sSql As String
-        Dim sParametros As String
-
-        sSql = "EXEC " + SP
-
-        sParametros = " "
-
-        For Each Parametro As String In Parametros
-            If Parametros.IndexOf(Parametro) > 0 Then
-                sParametros = sParametros + ", "
-            End If
-            If Tipos(Parametros.IndexOf(Parametro).ToString) = "TEXTO" Then
-                Parametro = "'" + Parametro + "'"
-            End If
-            If Salida(Parametros.IndexOf(Parametro)) = True Then
-                Parametro = Parametro + " OUTPUT"
-            End If
-            sParametros = sParametros + Parametro
-        Next
-
-        sSql = sSql + sParametros
-
-        Dim dc As New SqlCommand(sSql, Conexion)
-
-        EjecutaSP = dc.ExecuteReader
-
-    End Function
-
-    Public Function BuscaUltimoIndice(Tablas As String, Indice As String, Condiciones As List(Of String), Filtros As List(Of String)) As String
+    Public Function BuscaUltimoIndice(Tablas As String, Indice As String, Condiciones As List(Of String), Filtros As List(Of String), Conexion As SqlConnection) As String
         Dim sSql As String
         Dim sCondiciones As String
         Dim bCondiciones As Boolean
@@ -193,7 +136,6 @@ Module modConexiones
             BuscaUltimoIndice = "ERROR"
             Exit Function
         End Try
-        
-    End Function
 
-End Module
+    End Function
+End Class

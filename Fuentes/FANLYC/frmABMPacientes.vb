@@ -17,11 +17,11 @@
             Dim Tipo As New List(Of String)
             Filtros.Add("NO TIENE")
             Condiciones.Add("NO TIENE")
-            Paciente.IdPaciente = CInt(BuscaUltimoIndice("PacientesHeaderTmp", "id_paciente_tmp", Condiciones, Filtros)) + 1
+            Paciente.IdPaciente = CInt(objScripts.BuscaUltimoIndice("PacientesHeaderTmp", "id_paciente_tmp", Condiciones, Filtros, objDataBase.Conexion)) + 1
             Campo.Add("id_paciente_tmp")
             Valor.Add(Paciente.IdPaciente.ToString)
             Tipo.Add("NÚMERO")
-            If Inserta("PacientesHeaderTmp", Campo, Tipo, Valor) = False Then
+            If objScripts.Inserta("PacientesHeaderTmp", Campo, Tipo, Valor, objDataBase.Conexion) = False Then
                 MsgBox("Error al generar temporal")
             End If
         End If
@@ -48,7 +48,8 @@
         lCondicion.Add("NO TIENE")
         sValor = "tp.cod_provincia"
         sDisplay = "tp.txt_provincia"
-        CargaCombo(cboProvincia, lTblas, sDisplay, sValor, lFiltros, lCondicion)
+        objCombo.Carga(cboProvincia, lTblas, sDisplay, sValor, lFiltros, lCondicion, objDataBase.Conexion)
+
     End Sub
 
     Private Sub CargaComboDistrito()
@@ -64,7 +65,7 @@
         lCondicion.Add(cboProvincia.SelectedValue.ToString)
         sValor = "td.cod_distrito"
         sDisplay = "td.txt_distrito"
-        CargaCombo(cboDistrito, lTblas, sDisplay, sValor, lFiltros, lCondicion)
+        objCombo.Carga(cboDistrito, lTblas, sDisplay, sValor, lFiltros, lCondicion, objDataBase.Conexion)
     End Sub
 
     Private Sub CargaComboCorregimiento()
@@ -85,7 +86,7 @@
         sValor = "tc.cod_corregimiento"
         sDisplay = "tc.txt_corregimiento"
 
-        CargaCombo(cboCorregimiento, lTblas, sDisplay, sValor, lFiltros, lCondicion)
+        objCombo.Carga(cboCorregimiento, lTblas, sDisplay, sValor, lFiltros, lCondicion, objDataBase.Conexion)
 
     End Sub
 
@@ -115,7 +116,7 @@
         lCondicion.Add("NO TIENE")
         sValor = "sx.cod_sexo"
         sDisplay = "sx.txt_sexo"
-        CargaCombo(cboSexo, lTablas, sDisplay, sValor, lFiltros, lCondicion)
+        objCombo.Carga(cboSexo, lTablas, sDisplay, sValor, lFiltros, lCondicion, objDataBase.Conexion)
     End Sub
 
     Private Sub CargaComboDoctor()
@@ -130,7 +131,7 @@
         lCondicion.Add("NO TIENE")
         sValor = "dc.cod_doctor"
         sDisplay = "dc.txt_nom_doctor"
-        CargaCombo(cboDoctor, lTblas, sDisplay, sValor, lFiltros, lCondicion)
+        objCombo.Carga(cboDoctor, lTblas, sDisplay, sValor, lFiltros, lCondicion, objDataBase.Conexion)
     End Sub
 
     Private Sub CargaComboEstado()
@@ -145,7 +146,7 @@
         lCondicion.Add("NO TIENE")
         sValor = "ep.cod_estado"
         sDisplay = "ep.txt_desc_estado"
-        CargaCombo(cboEstado, lTblas, sDisplay, sValor, lFiltros, lCondicion)
+        objCombo.Carga(cboEstado, lTblas, sDisplay, sValor, lFiltros, lCondicion, objDataBase.Conexion)
     End Sub
 
     Private Sub CargaComboHospital()
@@ -160,7 +161,7 @@
         lCondicion.Add("NO TIENE")
         sValor = "hp.cod_hospital"
         sDisplay = "hp.txt_desc_hospital"
-        CargaCombo(cboHospital, lTblas, sDisplay, sValor, lFiltros, lCondicion)
+        objCombo.Carga(cboHospital, lTblas, sDisplay, sValor, lFiltros, lCondicion, objDataBase.Conexion)
     End Sub
 
     Private Sub CargaComboDiagnostico()
@@ -175,7 +176,7 @@
         lCondicion.Add("NO TIENE")
         sValor = "dg.cod_diagnostico"
         sDisplay = "dg.txt_desc_diagnostico"
-        CargaCombo(cboDiagnostico, lTblas, sDisplay, sValor, lFiltros, lCondicion)
+        objCombo.Carga(cboDiagnostico, lTblas, sDisplay, sValor, lFiltros, lCondicion, objDataBase.Conexion)
     End Sub
 
     Private Sub chkOtroDoc_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles chkOtroDoc.CheckedChanged
@@ -290,7 +291,10 @@
         End If
     End Sub
 
+
     Private Sub GuardaTemporal()
 
     End Sub
+
+
 End Class

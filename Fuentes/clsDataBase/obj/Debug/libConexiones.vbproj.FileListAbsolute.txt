@@ -1,0 +1,11 @@
+C:\Fuentes\FANLYC\Fuentes\clsDataBase\obj\Debug\ResolveAssemblyReference.cache
+C:\Fuentes\FANLYC\Fuentes\clsDataBase\obj\Debug\GenerateResource-ResGen.read.1.tlog
+C:\Fuentes\FANLYC\Fuentes\clsDataBase\obj\Debug\GenerateResource-ResGen.write.1.tlog
+C:\Fuentes\FANLYC\Fuentes\clsDataBase\bin\Debug\libConexiones.dll.config
+C:\Fuentes\FANLYC\Fuentes\clsDataBase\bin\Debug\libConexiones.dll
+C:\Fuentes\FANLYC\Fuentes\clsDataBase\bin\Debug\libConexiones.pdb
+C:\Fuentes\FANLYC\Fuentes\clsDataBase\bin\Debug\libConexiones.xml
+C:\Fuentes\FANLYC\Fuentes\clsDataBase\obj\Debug\libConexiones.Resources.resources
+C:\Fuentes\FANLYC\Fuentes\clsDataBase\obj\Debug\libConexiones.dll
+C:\Fuentes\FANLYC\Fuentes\clsDataBase\obj\Debug\libConexiones.xml
+C:\Fuentes\FANLYC\Fuentes\clsDataBase\obj\Debug\libConexiones.pdb

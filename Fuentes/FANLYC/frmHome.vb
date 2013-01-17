@@ -5,10 +5,12 @@
     End Sub
 
     Private Sub frmHome_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
-        If ConectarBase() = False Then
-            MsgBox("CONEXION FALLIDA ")
+        If objDataBase.ConectarBase("FANLYC") = False Then
+            MsgBox("Conexión Fallida")
             Exit Sub
         End If
+
+        Me.Text = "INICIO  -  " + objDataBase.DataBaseName
     End Sub
 
     Private Sub butAgregar_Click(sender As System.Object, e As System.EventArgs) Handles butAgregar.Click

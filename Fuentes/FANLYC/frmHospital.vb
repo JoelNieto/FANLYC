@@ -51,10 +51,9 @@
         lColumnas.Add("th.txt_desc_hospital")
         lColumnas.Add("th.txt_abrev_hospital")
         lTablas.Add("Hospitales th")
-        lFiltros.Add("th.cod_hospital")
-        lCondiciones.Add(" > 0")
+        lFiltros.Add("NO TIENE")
         lsvHospital.Clear()
-        CargaListView(lsvHospital, lColumnas, lTablas, lFiltros, lCondiciones)
+        objListview.Carga(lsvHospital, lColumnas, lTablas, lFiltros, lCondiciones, objDataBase.Conexion)
         lsvHospital.Columns.Add("#", 35, HorizontalAlignment.Center)
         lsvHospital.Columns.Add("Nombre Hospital", 200, HorizontalAlignment.Left)
         lsvHospital.Columns.Add("Nombre Abrev.", 100, HorizontalAlignment.Left)
@@ -73,7 +72,7 @@
         lCondiciones.Add("NO TIENE")
         lFiltros.Add("NO TIENE")
         lsvHospital.Clear()
-        CargaListView(lsvHospital, lColumnas, lTablas, lFiltros, lCondiciones)
+        objListview.Carga(lsvHospital, lColumnas, lTablas, lFiltros, lCondiciones, objDataBase.Conexion)
         lsvHospital.Columns.Add("#", 35, HorizontalAlignment.Center)
         lsvHospital.Columns.Add("Nombre Doctor", 200, HorizontalAlignment.Left)
         'lsvHospital.Columns.Add("Nombre Abrev.", 60, HorizontalAlignment.Center)
@@ -93,7 +92,7 @@
         lCondiciones.Add("NO TIENE")
         lFiltros.Add("NO TIENE")
         lsvHospital.Clear()
-        CargaListView(lsvHospital, lColumnas, lTablas, lFiltros, lCondiciones)
+        objListview.Carga(lsvHospital, lColumnas, lTablas, lFiltros, lCondiciones, objDataBase.Conexion)
         lsvHospital.Columns.Add("#", 35, HorizontalAlignment.Center)
         lsvHospital.Columns.Add("Descripción Diagnóstico", 200, HorizontalAlignment.Left)
         'lsvHospital.Columns.Add("Nombre Abrev.", 60, HorizontalAlignment.Center)
@@ -113,7 +112,7 @@
         lCondiciones.Add("NO TIENE")
         lFiltros.Add("NO TIENE")
         lsvHospital.Clear()
-        CargaListView(lsvHospital, lColumnas, lTablas, lFiltros, lCondiciones)
+        objListview.Carga(lsvHospital, lColumnas, lTablas, lFiltros, lCondiciones, objDataBase.Conexion)
         lsvHospital.Columns.Add("#", 35, HorizontalAlignment.Center)
         lsvHospital.Columns.Add("Descripción Estado", 200, HorizontalAlignment.Left)
         'lsvHospital.Columns.Add("Nombre Abrev.", 60, HorizontalAlignment.Center)
@@ -145,7 +144,7 @@
         lValores.Add(txtNomAbrev.Text)
         lTipos.Add("TEXTO")
 
-        If Inserta("Hospitales", lCampos, lTipos, lValores) = True Then
+        If objScripts.Inserta("Hospitales", lCampos, lTipos, lValores, objDataBase.Conexion) = True Then
             MsgBox("Hospital añadido con éxito", MsgBoxStyle.Information)
             txtNomHospital.Text = ""
             txtNomAbrev.Text = ""
@@ -167,7 +166,7 @@
         lValores.Add(txtNomHospital.Text)
         lTipos.Add("TEXTO")
 
-        If Inserta("Doctores", lCampos, lTipos, lValores) = True Then
+        If objScripts.Inserta("Doctores", lCampos, lTipos, lValores, objDataBase.Conexion) = True Then
             MsgBox("Doctor añadido con éxito", MsgBoxStyle.Information)
             txtNomHospital.Text = ""
             CargaDoctores()
@@ -187,7 +186,7 @@
         lValores.Add(txtNomHospital.Text)
         lTipos.Add("TEXTO")
 
-        If Inserta("Diagnosticos", lCampos, lTipos, lValores) = True Then
+        If objScripts.Inserta("Diagnosticos", lCampos, lTipos, lValores, objDataBase.Conexion) = True Then
             MsgBox("Diagnóstico añadido con éxito", MsgBoxStyle.Information)
             txtNomHospital.Text = ""
             CargaDiagnosticos()
@@ -207,7 +206,7 @@
         lValores.Add(txtNomHospital.Text)
         lTipos.Add("TEXTO")
 
-        If Inserta("EstadosPaciente", lCampos, lTipos, lValores) = True Then
+        If objScripts.Inserta("EstadosPaciente", lCampos, lTipos, lValores, objDataBase.Conexion) = True Then
             MsgBox("Estado Paciente añadido con éxito", MsgBoxStyle.Information)
             txtNomHospital.Text = ""
             CargaEstados()

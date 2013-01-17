@@ -14,10 +14,6 @@ Represents the strongly named DataTable class.
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
-</member><member name="T:FANLYC.DataSet1.LugaresDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
 </member><member name="T:FANLYC.DataSet1.DireccionesRow">
 	<summary>
 Represents strongly named DataRow class.
@@ -26,19 +22,11 @@ Represents strongly named DataRow class.
 	<summary>
 Represents strongly named DataRow class.
 </summary>
-</member><member name="T:FANLYC.DataSet1.LugaresRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
 </member><member name="T:FANLYC.DataSet1.DireccionesRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
 </member><member name="T:FANLYC.DataSet1.TiposTelefRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:FANLYC.DataSet1.LugaresRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
@@ -51,10 +39,6 @@ Represents a strongly typed in-memory cache of data.
 Represents the connection and commands used to retrieve and save data.
 </summary>
 </member><member name="T:FANLYC.DataSet1TableAdapters.TiposTelefTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:FANLYC.DataSet1TableAdapters.LugaresTableAdapter">
 	<summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>

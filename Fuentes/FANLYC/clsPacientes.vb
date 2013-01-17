@@ -21,7 +21,7 @@
     Private iDiagnostico As Integer
     Private iDoctor As Integer
     Private oTelefonos As Object
-    Private
+
 
     Public Property IdPaciente() As Integer
         Get
