@@ -2,8 +2,14 @@
 
     Public iNuevoPaciente As Boolean
 
+    Private Sub frmABMPacientes_FormClosing(sender As Object, e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
+        If MsgBox("Desea guardar temporal?", MsgBoxStyle.YesNo, "Salvado de Temporal") = MsgBoxResult.Yes Then
+            GuardaTemporal()
+        End If
+    End Sub
+
     Private Sub frmABMPacientes_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
-    
+
         Me.CenterToScreen()
         CargaControles()
         If iNuevoPaciente = True Then
@@ -278,18 +284,60 @@
         End If
     End Sub
 
-    Private Sub grdTelefono_GotFocus(sender As Object, e As System.EventArgs) Handles grdTelefono.GotFocus
-        grdTelefono.Rows(grdTelefono.Rows.Count - 1).Cells("colIndTelefono").Value = grdTelefono.Rows.Count.ToString
-    End Sub
-
-    Private Sub grdTelefono_UserAddedRow(sender As Object, e As System.Windows.Forms.DataGridViewRowEventArgs) Handles grdTelefono.UserAddedRow
-        grdTelefono.Rows(grdTelefono.Rows.Count - 1).Cells("colIndTelefono").Value = grdTelefono.Rows.Count.ToString
-    End Sub
-
     Private Sub butSalir_Click(sender As System.Object, e As System.EventArgs) Handles butSalir.Click
-        If MsgBox("Desea guardar temporal?", MsgBoxStyle.YesNo, "Salvado de Temporal") = MsgBoxResult.Yes Then
-            GuardaTemporal()
+        Me.Close()
+    End Sub
+
+    Private Sub txtTelDom_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTelDom.KeyPress
+        If Char.IsLetter(e.KeyChar) Then
+            e.Handled = True
+        ElseIf Char.IsWhiteSpace(e.KeyChar) Then
+            e.Handled = True
         End If
+    End Sub
+
+    Private Sub txtTelCel_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTelCel.KeyPress
+        If Char.IsLetter(e.KeyChar) Then
+            e.Handled = True
+        ElseIf Char.IsWhiteSpace(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtTelOfic_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTelOfic.KeyPress
+        If Char.IsLetter(e.KeyChar) Then
+            e.Handled = True
+        ElseIf Char.IsWhiteSpace(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtMadre_LostFocus(sender As Object, e As System.EventArgs) Handles txtMadre.LostFocus
+        Paciente.NomMadre = txtMadre.Text
+    End Sub
+
+    Private Sub txtApellidoMadre_LostFocus(sender As Object, e As System.EventArgs) Handles txtApellidoMadre.LostFocus
+        Paciente.ApelMadre = txtApellidoMadre.Text
+    End Sub
+
+    Private Sub txtPadre_LostFocus(sender As Object, e As System.EventArgs) Handles txtPadre.LostFocus
+        Paciente.NomPadre = txtPadre.Text
+    End Sub
+
+    Private Sub txtApellidoPadre_LostFocus(sender As Object, e As System.EventArgs) Handles txtApellidoPadre.LostFocus
+        Paciente.ApelPadre = txtApellidoPadre.Text
+    End Sub
+
+    Private Sub txtTelCel_LostFocus(sender As Object, e As System.EventArgs) Handles txtTelCel.LostFocus
+        Paciente.TelCel = txtTelCel.Text
+    End Sub
+
+    Private Sub txtTelDom_LostFocus(sender As Object, e As System.EventArgs) Handles txtTelDom.LostFocus
+        Paciente.TelDomi = txtTelDom.Text
+    End Sub
+
+    Private Sub txtTelOfic_LostFocus(sender As Object, e As System.EventArgs) Handles txtTelOfic.LostFocus
+        Paciente.TelOfic = txtTelOfic.Text
     End Sub
 
 End Class

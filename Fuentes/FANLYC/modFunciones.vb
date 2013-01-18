@@ -22,11 +22,21 @@
         Paciente.Estado = 1
         Paciente.Doctor = 1
         Paciente.Hospital = 1
-
+        Paciente.ApelMadre = ""
+        Paciente.NomMadre = ""
+        Paciente.ApelPadre = ""
+        Paciente.NomPadre = ""
+        Paciente.TelCel = ""
+        Paciente.TelDomi = ""
+        Paciente.TelOfic = ""
     End Sub
 
     Public Sub GuardaTemporal()
+        GuardaHeaderTemporal()
+        GuardaDireccionTemporal()
+    End Sub
 
+    Private Sub GuardaHeaderTemporal()
         Dim lParametros As New List(Of String)
         Dim lTipos As New List(Of String)
 
@@ -40,12 +50,29 @@
         lParametros.Add(Paciente.Apellido.ToString) : lTipos.Add("TEXTO")
         lParametros.Add(Paciente.SegundoApellido.ToString) : lTipos.Add("TEXTO")
         lParametros.Add(Paciente.Sexo.ToString) : lTipos.Add("NUMERO")
-        lParametros.Add(Format(Paciente.FecNac, "yyyymmdd")) : lTipos.Add("TEXTO")
+        lParametros.Add(Format(Paciente.FecNac, "yyyyMMdd")) : lTipos.Add("TEXTO")
         lParametros.Add(Paciente.Edad.ToString) : lTipos.Add("NUMERO")
         lParametros.Add(Paciente.EdadMeses.ToString) : lTipos.Add("NUMERO")
         lParametros.Add("0") : lTipos.Add("NUMERO")
 
         objScripts.EjecutaSP("GuardaHeaderTemporal", lParametros, lTipos, objDataBase.Conexion)
+    End Sub
+
+    Private Sub GuardaDireccionTemporal()
+        Dim lParametros As New List(Of String)
+        Dim lTipos As New List(Of String)
+
+        lParametros.Add(Paciente.IdPaciente.ToString) : lTipos.Add("NUMERO")
+        lParametros.Add(Paciente.Provincia.ToString) : lTipos.Add("NUMERO")
+        lParametros.Add(Paciente.Distrito.ToString) : lTipos.Add("NUMERO")
+        lParametros.Add(Paciente.Corregimiento.ToString) : lTipos.Add("NUMERO")
+        lParametros.Add(Paciente.Barrio.ToString) : lTipos.Add("TEXTO")
+        lParametros.Add(Paciente.Calle.ToString) : lTipos.Add("TEXTO")
+        lParametros.Add(Paciente.Edificio.ToString) : lTipos.Add("TEXTO")
+        lParametros.Add(Paciente.Casa.ToString) : lTipos.Add("TEXTO")
+        lParametros.Add(Paciente.DirCompleta.ToString) : lTipos.Add("TEXTO")
+
+        objScripts.EjecutaSP("GuardaDireccionTemporal", lParametros, lTipos, objDataBase.Conexion)
     End Sub
 
     Public Function CalculaEdadMes(fecNac As Date) As Integer

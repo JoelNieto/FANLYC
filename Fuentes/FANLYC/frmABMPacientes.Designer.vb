@@ -61,10 +61,12 @@ Partial Class frmABMPacientes
         Me.cboProvincia = New System.Windows.Forms.ComboBox()
         Me.tabContacto = New System.Windows.Forms.TabPage()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
-        Me.grdTelefono = New System.Windows.Forms.DataGridView()
-        Me.colIndTelefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colTipoTel = New System.Windows.Forms.DataGridViewComboBoxColumn()
-        Me.colTelefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.txtTelOfic = New System.Windows.Forms.TextBox()
+        Me.txtTelCel = New System.Windows.Forms.TextBox()
+        Me.txtTelDom = New System.Windows.Forms.TextBox()
+        Me.Label25 = New System.Windows.Forms.Label()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.Label18 = New System.Windows.Forms.Label()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.txtApellidoPadre = New System.Windows.Forms.TextBox()
         Me.txtApellidoMadre = New System.Windows.Forms.TextBox()
@@ -98,7 +100,6 @@ Partial Class frmABMPacientes
         Me.GroupBox3.SuspendLayout()
         Me.tabContacto.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
-        CType(Me.grdTelefono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox4.SuspendLayout()
         Me.tabMedica.SuspendLayout()
         Me.GroupBox7.SuspendLayout()
@@ -111,7 +112,7 @@ Partial Class frmABMPacientes
         Me.TabControl1.Controls.Add(Me.tabDireccion)
         Me.TabControl1.Controls.Add(Me.tabContacto)
         Me.TabControl1.Controls.Add(Me.tabMedica)
-        Me.TabControl1.Location = New System.Drawing.Point(12, 47)
+        Me.TabControl1.Location = New System.Drawing.Point(19, 47)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(726, 325)
@@ -488,44 +489,73 @@ Partial Class frmABMPacientes
         '
         'GroupBox5
         '
-        Me.GroupBox5.Controls.Add(Me.grdTelefono)
+        Me.GroupBox5.Controls.Add(Me.txtTelOfic)
+        Me.GroupBox5.Controls.Add(Me.txtTelCel)
+        Me.GroupBox5.Controls.Add(Me.txtTelDom)
+        Me.GroupBox5.Controls.Add(Me.Label25)
+        Me.GroupBox5.Controls.Add(Me.Label24)
+        Me.GroupBox5.Controls.Add(Me.Label18)
         Me.GroupBox5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.GroupBox5.Location = New System.Drawing.Point(165, 140)
+        Me.GroupBox5.Location = New System.Drawing.Point(231, 133)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(346, 140)
+        Me.GroupBox5.Size = New System.Drawing.Size(257, 152)
         Me.GroupBox5.TabIndex = 2
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Teléfonos"
         '
-        'grdTelefono
+        'txtTelOfic
         '
-        Me.grdTelefono.BackgroundColor = System.Drawing.Color.PowderBlue
-        Me.grdTelefono.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.grdTelefono.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colIndTelefono, Me.colTipoTel, Me.colTelefono})
-        Me.grdTelefono.GridColor = System.Drawing.SystemColors.ActiveCaption
-        Me.grdTelefono.Location = New System.Drawing.Point(22, 24)
-        Me.grdTelefono.Name = "grdTelefono"
-        Me.grdTelefono.Size = New System.Drawing.Size(303, 110)
-        Me.grdTelefono.TabIndex = 0
+        Me.txtTelOfic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtTelOfic.Location = New System.Drawing.Point(111, 104)
+        Me.txtTelOfic.MaxLength = 10
+        Me.txtTelOfic.Name = "txtTelOfic"
+        Me.txtTelOfic.Size = New System.Drawing.Size(100, 25)
+        Me.txtTelOfic.TabIndex = 5
         '
-        'colIndTelefono
+        'txtTelCel
         '
-        Me.colIndTelefono.HeaderText = "#"
-        Me.colIndTelefono.Name = "colIndTelefono"
-        Me.colIndTelefono.ReadOnly = True
-        Me.colIndTelefono.Width = 25
+        Me.txtTelCel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtTelCel.Location = New System.Drawing.Point(111, 68)
+        Me.txtTelCel.MaxLength = 10
+        Me.txtTelCel.Name = "txtTelCel"
+        Me.txtTelCel.Size = New System.Drawing.Size(100, 25)
+        Me.txtTelCel.TabIndex = 4
         '
-        'colTipoTel
+        'txtTelDom
         '
-        Me.colTipoTel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.colTipoTel.HeaderText = "Tipo"
-        Me.colTipoTel.Name = "colTipoTel"
-        Me.colTipoTel.Width = 125
+        Me.txtTelDom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtTelDom.Location = New System.Drawing.Point(111, 32)
+        Me.txtTelDom.MaxLength = 10
+        Me.txtTelDom.Name = "txtTelDom"
+        Me.txtTelDom.Size = New System.Drawing.Size(100, 25)
+        Me.txtTelDom.TabIndex = 3
         '
-        'colTelefono
+        'Label25
         '
-        Me.colTelefono.HeaderText = "Teléfono"
-        Me.colTelefono.Name = "colTelefono"
+        Me.Label25.AutoSize = True
+        Me.Label25.Location = New System.Drawing.Point(55, 105)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(50, 19)
+        Me.Label25.TabIndex = 2
+        Me.Label25.Text = "Oficina"
+        '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.Location = New System.Drawing.Point(55, 70)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(50, 19)
+        Me.Label24.TabIndex = 1
+        Me.Label24.Text = "Celular"
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(41, 35)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(64, 19)
+        Me.Label18.TabIndex = 0
+        Me.Label18.Text = "Domicilio"
         '
         'GroupBox4
         '
@@ -539,7 +569,7 @@ Partial Class frmABMPacientes
         Me.GroupBox4.Controls.Add(Me.txtMadre)
         Me.GroupBox4.Location = New System.Drawing.Point(24, 13)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(670, 121)
+        Me.GroupBox4.Size = New System.Drawing.Size(670, 114)
         Me.GroupBox4.TabIndex = 1
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Padres"
@@ -807,7 +837,7 @@ Partial Class frmABMPacientes
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(769, 440)
+        Me.ClientSize = New System.Drawing.Size(765, 440)
         Me.Controls.Add(Me.butSalir)
         Me.Controls.Add(Me.butEditar)
         Me.Controls.Add(Me.butGrabar)
@@ -830,7 +860,7 @@ Partial Class frmABMPacientes
         Me.GroupBox3.PerformLayout()
         Me.tabContacto.ResumeLayout(False)
         Me.GroupBox5.ResumeLayout(False)
-        CType(Me.grdTelefono, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox5.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
         Me.tabMedica.ResumeLayout(False)
@@ -878,7 +908,6 @@ Partial Class frmABMPacientes
     Friend WithEvents txtDirComp As System.Windows.Forms.TextBox
     Friend WithEvents txtApto As System.Windows.Forms.TextBox
     Friend WithEvents tabContacto As System.Windows.Forms.TabPage
-    Friend WithEvents grdTelefono As System.Windows.Forms.DataGridView
     Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
     Friend WithEvents txtMadre As System.Windows.Forms.TextBox
     Friend WithEvents GroupBox5 As System.Windows.Forms.GroupBox
@@ -904,8 +933,11 @@ Partial Class frmABMPacientes
     Friend WithEvents txtApellidoMadre As System.Windows.Forms.TextBox
     Friend WithEvents Label23 As System.Windows.Forms.Label
     Friend WithEvents Label22 As System.Windows.Forms.Label
-    Friend WithEvents colIndTelefono As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents colTipoTel As System.Windows.Forms.DataGridViewComboBoxColumn
-    Friend WithEvents colTelefono As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents butSalir As System.Windows.Forms.Button
+    Friend WithEvents txtTelDom As System.Windows.Forms.TextBox
+    Friend WithEvents Label25 As System.Windows.Forms.Label
+    Friend WithEvents Label24 As System.Windows.Forms.Label
+    Friend WithEvents Label18 As System.Windows.Forms.Label
+    Friend WithEvents txtTelOfic As System.Windows.Forms.TextBox
+    Friend WithEvents txtTelCel As System.Windows.Forms.TextBox
 End Class

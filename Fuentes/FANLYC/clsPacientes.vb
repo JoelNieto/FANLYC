@@ -21,7 +21,13 @@
     Private iEstado As Integer
     Private iDiagnostico As Integer
     Private iDoctor As Integer
-    Private oTelefonos As Object
+    Private sTelDom As String
+    Private sTelOfic As String
+    Private sTelCel As String
+    Private sNomPadre As String
+    Private sApelPadre As String
+    Private sNomMadre As String
+    Private sApelMadre As String
 
     Public Property IdPaciente() As Integer
         Get
@@ -209,6 +215,69 @@
         End Get
         Set(value As String)
             iDoctor = value
+        End Set
+    End Property
+
+    Public Property NomMadre As String
+        Get
+            Return sNomMadre
+        End Get
+        Set(value As String)
+            sNombre = value
+        End Set
+    End Property
+
+    Public Property ApelMadre As String
+        Get
+            Return sApelMadre
+        End Get
+        Set(value As String)
+            sApelMadre = value
+        End Set
+    End Property
+
+    Public Property NomPadre As String
+        Get
+            Return sNomPadre
+        End Get
+        Set(value As String)
+            sNomPadre = value
+        End Set
+    End Property
+
+    Public Property ApelPadre As String
+        Get
+            Return sApelPadre
+        End Get
+        Set(value As String)
+            sApelPadre = value
+        End Set
+    End Property
+
+    Public Property TelDomi As String
+        Get
+            Return sTelDom
+        End Get
+        Set(value As String)
+            sTelDom = value
+        End Set
+    End Property
+
+    Public Property TelOfic As String
+        Get
+            Return sTelOfic
+        End Get
+        Set(value As String)
+            sTelOfic = value
+        End Set
+    End Property
+
+    Public Property TelCel As String
+        Get
+            Return sTelCel
+        End Get
+        Set(value As String)
+            sTelCel = value
         End Set
     End Property
 

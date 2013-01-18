@@ -1,6 +1,8 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Data.Sql
+
 Public Class clsScripts
+
     Public Function Inserta(Tablas As String, Campos As List(Of String), Tipo As List(Of String), Valores As List(Of String), Conexion As SqlConnection) As Boolean
         Dim sSql As String
         Dim sCampos As String
@@ -115,6 +117,8 @@ Public Class clsScripts
         Dim dc As New SqlCommand(sSql, Conexion)
 
         DR = dc.ExecuteReader
+
+        DR.Close()
 
     End Sub
 
