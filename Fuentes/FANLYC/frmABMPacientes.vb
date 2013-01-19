@@ -197,10 +197,30 @@
     End Sub
 
     Private Sub datFecNac_ValueChanged(sender As System.Object, e As System.EventArgs) Handles datFecNac.ValueChanged
+        If datFecNac.Value > Now Then
+            MsgBox("Fecha incorrecta, favor corregir")
+            Exit Sub
+        End If
         txtEdad.Text = DateDiff(DateInterval.Year, datFecNac.Value, Now).ToString
         Paciente.FecNac = datFecNac.Value
         Paciente.Edad = Val(txtEdad.Text)
         Paciente.EdadMeses = CalculaEdadMes(datFecNac.Value)
+    End Sub
+
+    Private Sub txtNombre_GotFocus(sender As Object, e As System.EventArgs) Handles txtNombre.GotFocus
+        objGrales.SelText(txtNombre)
+    End Sub
+
+    Private Sub txtNombre2_GotFocus(sender As Object, e As System.EventArgs) Handles txtNombre2.GotFocus
+        objGrales.SelText(txtNombre2)
+    End Sub
+
+    Private Sub txtApellido_GotFocus(sender As Object, e As System.EventArgs) Handles txtApellido.GotFocus
+        objGrales.SelText(txtApellido)
+    End Sub
+
+    Private Sub txtApellido2_GotFocus(sender As Object, e As System.EventArgs) Handles txtApellido2.GotFocus
+        objGrales.SelText(txtApellido2)
     End Sub
 
     Private Sub txtNombre_LostFocus(sender As Object, e As System.EventArgs) Handles txtNombre.LostFocus
@@ -340,4 +360,63 @@
         Paciente.TelOfic = txtTelOfic.Text
     End Sub
 
+    Private Sub butGrabar_Click(sender As System.Object, e As System.EventArgs) Handles butGrabar.Click
+        If ValidaFunction() = True Then
+            Try
+                GuardaTemporal()
+                iNuevoId = ObtieneNuevoId()
+                TrasladaTemporal()
+            Catch ex As Exception
+                LimpiarPacientes(False)
+                MsgBox("Error al guardar Paciente, inténtelo de nuevo: " + vbCrLf + ex.Message.ToString, MsgBoxStyle.Critical)
+                Exit Sub
+            End Try
+            MsgBox("Paciente Grabado con Éxito: " + vbCrLf + "ID: " + iNuevoId.ToString, MsgBoxStyle.OkOnly)
+        End If
+    End Sub
+
+    Private Function ValidaFunction() As Boolean
+        Dim sAdvertencias As String = ""
+        Dim sErrores As String = ""
+
+        If Len(Trim(txtNombre.Text)) = 0 Then
+            sErrores = sErrores + "Nombre"
+        End If
+
+        If Len(Trim(txtApellido.Text)) = 0 Then
+            sErrores = sErrores + vbCrLf + "Apellido"
+        End If
+
+        If (Len(Trim(txtPadre.Text)) = 0 Or Len(Trim(txtApellidoPadre.Text)) = 0) And (Len(Trim(txtMadre.Text)) = 0 Or Len(Trim(txtApellidoMadre.Text)) = 0) Then
+            sErrores = sErrores + vbCrLf + "Padres"
+        End If
+
+        If Len(Trim(txtTelCel.Text)) = 0 And Len(Trim(txtTelDom.Text)) = 0 And Len(Trim(txtTelOfic.Text)) = 0 Then
+            sErrores = sErrores + vbCrLf + "Teléfonos"
+        End If
+
+        If chkOtroDoc.CheckState = CheckState.Checked And Len(Trim(txtOtroDoctor.Text)) = 0 Then
+            sErrores = sErrores + vbCrLf + "Doctor"
+        End If
+
+        If Len(Trim(sErrores)) <> 0 Then
+            MsgBox("Faltan los siguientes Campos: " + vbCrLf + sErrores, MsgBoxStyle.Critical)
+            ValidaFunction = False
+            Exit Function
+        Else
+            ValidaFunction = True
+        End If
+
+
+
+
+    End Function
+
+    Private Sub txtNombre_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtNombre.TextChanged
+
+    End Sub
+
+    Private Sub txtMadre_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtMadre.TextChanged
+
+    End Sub
 End Class

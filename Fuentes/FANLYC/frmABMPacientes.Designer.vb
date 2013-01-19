@@ -148,7 +148,7 @@ Partial Class frmABMPacientes
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(324, 76)
+        Me.Label7.Location = New System.Drawing.Point(279, 76)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(39, 19)
         Me.Label7.TabIndex = 5
@@ -159,7 +159,7 @@ Partial Class frmABMPacientes
         Me.txtEdad.BackColor = System.Drawing.Color.White
         Me.txtEdad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtEdad.Enabled = False
-        Me.txtEdad.Location = New System.Drawing.Point(369, 73)
+        Me.txtEdad.Location = New System.Drawing.Point(324, 74)
         Me.txtEdad.Name = "txtEdad"
         Me.txtEdad.Size = New System.Drawing.Size(70, 25)
         Me.txtEdad.TabIndex = 4
@@ -179,7 +179,7 @@ Partial Class frmABMPacientes
         Me.datFecNac.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.datFecNac.Location = New System.Drawing.Point(146, 73)
         Me.datFecNac.Name = "datFecNac"
-        Me.datFecNac.Size = New System.Drawing.Size(149, 25)
+        Me.datFecNac.Size = New System.Drawing.Size(109, 25)
         Me.datFecNac.TabIndex = 2
         '
         'Label5

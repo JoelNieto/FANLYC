@@ -51,7 +51,7 @@ Public Class clsScripts
 
     End Function
 
-    Public Function Elimina(Tablas As String, Condiciones As List(Of String), Valores As List(Of String), Conexion As SqlConnection, Optional bMantIndice As Boolean = False) As Boolean
+    Public Function Elimina(Tablas As String, Condiciones As List(Of String), Valores As List(Of String), Conexion As SqlConnection) As Boolean
         Dim sSql As String
         Dim sCondiciones As String
 
@@ -126,7 +126,7 @@ Public Class clsScripts
         Dim sSql As String
         Dim sCondiciones As String
         Dim bCondiciones As Boolean
-
+        BuscaUltimoIndice = ""
         If Condiciones.Count <> Filtros.Count Then
             BuscaUltimoIndice = "ERROR"
             Exit Function
@@ -157,19 +157,11 @@ Public Class clsScripts
         Dim da As New SqlClient.SqlCommand(sSql, Conexion)
         Dim dQuery As SqlDataReader = da.ExecuteReader()
 
-        Try
-            While dQuery.Read
-                BuscaUltimoIndice = dQuery(0).ToString
-            End While
-            dQuery.Close()
-
-        Catch ex As Exception
-            MsgBox("ERROR BUSCANDO ÍNDICE" + vbCrLf + ex.Message.ToString)
-            BuscaUltimoIndice = "ERROR"
-            Exit Function
-        End Try
+        While dQuery.Read
+            BuscaUltimoIndice = dQuery(0).ToString
+        End While
+        dQuery.Close()
 
     End Function
-
 
 End Class

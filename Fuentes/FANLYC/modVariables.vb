@@ -5,5 +5,6 @@
     Public objGrales As New libConexiones.clsGenerales
     Public objListview As New libConexiones.clsListView
     Public Paciente As New clsPacientes
+    Public iNuevoId As Integer
 
 End Module
