@@ -100,13 +100,14 @@ SELECT cod_hospital AS ID, txt_desc_hospital AS Nombre, txt_abrev_hospital AS [N
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PacienteRecupTableAdapter" GeneratorDataComponentClassName="PacienteRecupTableAdapter" Name="PacienteRecup" UserDataComponentName="PacienteRecupTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="FANLYC (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="FANLYC (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT         PacientesHeader.cod_hospital AS Hospital, PacientesHeader.cod_doctor AS Doctor, PacientesHeader.cod_estado_paciente AS Estado, PacientesHeader.cod_diagnostico AS Diagnostico, PacientesHeader.txt_nombre AS Nombre, PacientesHeader.txt_nombre2 AS Nombre2, PacientesHeader.txt_apellido AS Apellido, 
-                          PacientesHeader.txt_apellido2 AS Apellido, PacientesHeader.cod_sexo AS Sexo, PacientesHeader.fec_nacimiento AS [Fec Nac], PacientesHeader.edad_anos AS Edad, PacientesHeader.edad_meses AS [Edad Meses], PacientesDireccion.cod_provincia AS Provincia, PacientesDireccion.cod_distrito AS Distrito, 
-                          PacientesDireccion.cod_corregimiento AS Corregimiento, PacientesDireccion.txt_barrio AS Barrio, PacientesDireccion.txt_calle AS Calle, PacientesDireccion.txt_edificio AS Edificio, PacientesDireccion.txt_apto AS Apto, PacientesDireccion.txt_direccion_completa AS DIreccion, PacientesTelef.txt_telef AS TelDomi, 
-                          PacientesTelef_1.txt_telef AS TelCel, PacientesTelef_2.txt_telef AS TelOfic, PacientesPadres.txt_nombre_padre AS NomPadre, PacientesPadres.txt_apellidos_padre AS ApelPadre, PacientesPadres_1.txt_nombre_padre AS NomMadre, PacientesPadres_1.txt_apellidos_padre AS ApelMadre
+                    <CommandText>SELECT         PacientesHeader.id_paciente, PacientesHeader.cod_hospital AS Hospital, PacientesHeader.cod_doctor AS Doctor, PacientesHeader.cod_estado_paciente AS Estado, PacientesHeader.cod_diagnostico AS Diagnostico, PacientesHeader.txt_nombre AS Nombre, PacientesHeader.txt_nombre2 AS Nombre2, 
+                          PacientesHeader.txt_apellido AS Apellido, PacientesHeader.txt_apellido2 AS Apellido, PacientesHeader.cod_sexo AS Sexo, PacientesHeader.fec_nacimiento AS [Fec Nac], PacientesHeader.edad_anos AS Edad, PacientesHeader.edad_meses AS [Edad Meses], PacientesDireccion.cod_provincia AS Provincia, 
+                          PacientesDireccion.cod_distrito AS Distrito, PacientesDireccion.cod_corregimiento AS Corregimiento, PacientesDireccion.txt_barrio AS Barrio, PacientesDireccion.txt_calle AS Calle, PacientesDireccion.txt_edificio AS Edificio, PacientesDireccion.txt_apto AS Apto, PacientesDireccion.txt_direccion_completa AS DIreccion, 
+                          PacientesTelef.txt_telef AS TelDomi, PacientesTelef_1.txt_telef AS TelCel, PacientesTelef_2.txt_telef AS TelOfic, PacientesPadres.txt_nombre_padre AS NomPadre, PacientesPadres.txt_apellidos_padre AS ApelPadre, PacientesPadres_1.txt_nombre_padre AS NomMadre, 
+                          PacientesPadres_1.txt_apellidos_padre AS ApelMadre
 FROM             PacientesHeader INNER JOIN
                           PacientesDireccion ON PacientesHeader.id_paciente = PacientesDireccion.id_paciente INNER JOIN
                           PacientesPadres ON PacientesHeader.id_paciente = PacientesPadres.id_paciente INNER JOIN
@@ -148,8 +149,33 @@ WHERE         (PacientesTelef.cod_tipo_telef = 1) AND (PacientesPadres.cod_padre
               <Mapping SourceColumn="ApelPadre" DataSetColumn="ApelPadre" />
               <Mapping SourceColumn="NomMadre" DataSetColumn="NomMadre" />
               <Mapping SourceColumn="ApelMadre" DataSetColumn="ApelMadre" />
+              <Mapping SourceColumn="id_paciente" DataSetColumn="id_paciente" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="FANLYC (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="FiltraPacientes" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="FiltraPacientes" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="FiltraPacientes" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT         PacientesHeader.id_paciente, PacientesHeader.cod_hospital AS Hospital, PacientesHeader.cod_doctor AS Doctor, PacientesHeader.cod_estado_paciente AS Estado, PacientesHeader.cod_diagnostico AS Diagnostico, PacientesHeader.txt_nombre AS Nombre, PacientesHeader.txt_nombre2 AS Nombre2, 
+                          PacientesHeader.txt_apellido AS Apellido, PacientesHeader.txt_apellido2 AS Apellido, PacientesHeader.cod_sexo AS Sexo, PacientesHeader.fec_nacimiento AS [Fec Nac], PacientesHeader.edad_anos AS Edad, PacientesHeader.edad_meses AS [Edad Meses], PacientesDireccion.cod_provincia AS Provincia, 
+                          PacientesDireccion.cod_distrito AS Distrito, PacientesDireccion.cod_corregimiento AS Corregimiento, PacientesDireccion.txt_barrio AS Barrio, PacientesDireccion.txt_calle AS Calle, PacientesDireccion.txt_edificio AS Edificio, PacientesDireccion.txt_apto AS Apto, PacientesDireccion.txt_direccion_completa AS DIreccion, 
+                          PacientesTelef.txt_telef AS TelDomi, PacientesTelef_1.txt_telef AS TelCel, PacientesTelef_2.txt_telef AS TelOfic, PacientesPadres.txt_nombre_padre AS NomPadre, PacientesPadres.txt_apellidos_padre AS ApelPadre, PacientesPadres_1.txt_nombre_padre AS NomMadre, 
+                          PacientesPadres_1.txt_apellidos_padre AS ApelMadre
+FROM             PacientesHeader INNER JOIN
+                          PacientesDireccion ON PacientesHeader.id_paciente = PacientesDireccion.id_paciente INNER JOIN
+                          PacientesPadres ON PacientesHeader.id_paciente = PacientesPadres.id_paciente INNER JOIN
+                          PacientesTelef ON PacientesHeader.id_paciente = PacientesTelef.id_paciente INNER JOIN
+                          PacientesTelef AS PacientesTelef_1 ON PacientesHeader.id_paciente = PacientesTelef_1.id_paciente INNER JOIN
+                          PacientesTelef AS PacientesTelef_2 ON PacientesHeader.id_paciente = PacientesTelef_2.id_paciente INNER JOIN
+                          PacientesPadres AS PacientesPadres_1 ON PacientesHeader.id_paciente = PacientesPadres_1.id_paciente
+WHERE         (PacientesTelef.cod_tipo_telef = 1) AND (PacientesPadres.cod_padres = 1) AND (PacientesTelef_1.cod_tipo_telef = 2) AND (PacientesTelef_2.cod_tipo_telef = 3) AND (PacientesPadres_1.cod_padres = 2)
+AND (PacientesHeader.id_paciente) = @id_paciente</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="id_paciente" ColumnName="id_paciente" DataSourceName="FANLYC.dbo.PacientesHeader" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id_paciente" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="id_paciente" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
         </Tables>
         <Sources />
@@ -369,6 +395,7 @@ WHERE         (PacientesTelef.cod_tipo_telef = 1) AND (PacientesPadres.cod_padre
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="id_paciente" msprop:Generator_ColumnVarNameInTable="columnid_paciente" msprop:Generator_ColumnPropNameInRow="id_paciente" msprop:Generator_ColumnPropNameInTable="id_pacienteColumn" msprop:Generator_UserColumnName="id_paciente" type="xs:int" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -381,6 +408,10 @@ WHERE         (PacientesTelef.cod_tipo_telef = 1) AND (PacientesPadres.cod_padre
     <xs:unique name="Hospitales_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:Hospitales" />
       <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="PacienteRecup_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:PacienteRecup" />
+      <xs:field xpath="mstns:id_paciente" />
     </xs:unique>
   </xs:element>
 </xs:schema>

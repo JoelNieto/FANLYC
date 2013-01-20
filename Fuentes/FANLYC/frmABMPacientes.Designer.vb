@@ -768,7 +768,7 @@ Partial Class frmABMPacientes
         Me.chkOtroDoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.chkOtroDoc.Location = New System.Drawing.Point(251, 27)
         Me.chkOtroDoc.Name = "chkOtroDoc"
-        Me.chkOtroDoc.Size = New System.Drawing.Size(68, 23)
+        Me.chkOtroDoc.Size = New System.Drawing.Size(60, 17)
         Me.chkOtroDoc.TabIndex = 1
         Me.chkOtroDoc.Text = "OTRO?"
         Me.chkOtroDoc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
