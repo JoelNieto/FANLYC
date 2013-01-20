@@ -34,10 +34,13 @@ Partial Class frmConsulta
         Me.EstadoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ProvinciaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DistritoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.mnuConsulta = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.mnuConsultar = New System.Windows.Forms.ToolStripMenuItem()
         Me.PacientesMainBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DSetPacientes = New FANLYC.dSetPacientes()
         Me.PacientesMainTableAdapter = New FANLYC.dSetPacientesTableAdapters.PacientesMainTableAdapter()
         CType(Me.grdPacientes, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.mnuConsulta.SuspendLayout()
         CType(Me.PacientesMainBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DSetPacientes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -51,6 +54,7 @@ Partial Class frmConsulta
         Me.grdPacientes.BackgroundColor = System.Drawing.Color.LightBlue
         Me.grdPacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.grdPacientes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IDDataGridViewTextBoxColumn, Me.NombreDataGridViewTextBoxColumn, Me.ApellidoDataGridViewTextBoxColumn, Me.SexoDataGridViewTextBoxColumn, Me.HospitalDataGridViewTextBoxColumn, Me.DoctorDataGridViewTextBoxColumn, Me.EstadoDataGridViewTextBoxColumn, Me.ProvinciaDataGridViewTextBoxColumn, Me.DistritoDataGridViewTextBoxColumn})
+        Me.grdPacientes.ContextMenuStrip = Me.mnuConsulta
         Me.grdPacientes.DataSource = Me.PacientesMainBindingSource
         Me.grdPacientes.GridColor = System.Drawing.Color.SkyBlue
         Me.grdPacientes.Location = New System.Drawing.Point(31, 56)
@@ -124,6 +128,19 @@ Partial Class frmConsulta
         Me.DistritoDataGridViewTextBoxColumn.Name = "DistritoDataGridViewTextBoxColumn"
         Me.DistritoDataGridViewTextBoxColumn.ReadOnly = True
         '
+        'mnuConsulta
+        '
+        Me.mnuConsulta.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuConsultar})
+        Me.mnuConsulta.Name = "mnuConsulta"
+        Me.mnuConsulta.Size = New System.Drawing.Size(189, 28)
+        '
+        'mnuConsultar
+        '
+        Me.mnuConsultar.Font = New System.Drawing.Font("Segoe UI Light", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.mnuConsultar.Name = "mnuConsultar"
+        Me.mnuConsultar.Size = New System.Drawing.Size(188, 24)
+        Me.mnuConsultar.Text = "Consultar Paciente"
+        '
         'PacientesMainBindingSource
         '
         Me.PacientesMainBindingSource.DataMember = "PacientesMain"
@@ -151,6 +168,7 @@ Partial Class frmConsulta
         Me.Name = "frmConsulta"
         Me.Text = "Consulta de Pacientes"
         CType(Me.grdPacientes, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.mnuConsulta.ResumeLayout(False)
         CType(Me.PacientesMainBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DSetPacientes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -169,4 +187,6 @@ Partial Class frmConsulta
     Friend WithEvents EstadoDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ProvinciaDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DistritoDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents mnuConsulta As System.Windows.Forms.ContextMenuStrip
+    Friend WithEvents mnuConsultar As System.Windows.Forms.ToolStripMenuItem
 End Class

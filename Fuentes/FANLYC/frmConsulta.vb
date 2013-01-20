@@ -8,8 +8,9 @@
         Me.CenterToScreen()
     End Sub
 
-    Private Sub grdPacientes_CellContentClick(sender As Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles grdPacientes.CellContentClick
-        Paciente.IdPaciente = grdPacientes.Rows(e.RowIndex).Cells(0).Value
+
+    Private Sub mnuConsultar_Click(sender As System.Object, e As System.EventArgs) Handles mnuConsultar.Click
+        Paciente.IdPaciente = grdPacientes.CurrentRow.Cells(0).Value
         frmABMPacientes.iNuevoPaciente = False
         frmABMPacientes.ShowDialog()
     End Sub

@@ -29,11 +29,12 @@
             Campo.Add("id_paciente_tmp")
             Valor.Add(Paciente.IdPaciente.ToString)
             Tipo.Add("NÚMERO")
-
             If objScripts.Inserta("PacientesHeaderTmp", Campo, Tipo, Valor, objDataBase.Conexion) = False Then
                 MsgBox("Error al generar temporal")
             End If
             InicializaPaciente()
+        Else
+
         End If
     End Sub
 

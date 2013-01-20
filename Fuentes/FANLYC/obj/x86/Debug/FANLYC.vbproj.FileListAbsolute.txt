@@ -20,7 +20,6 @@ C:\Fuentes\FANLYC\FANLYC\obj\x86\Debug\RdlCompile.compiled
 C:\Fuentes\FANLYC\Fuentes\FANLYC\bin\Debug\FANLYC.exe.config
 C:\Fuentes\FANLYC\Fuentes\FANLYC\obj\x86\Debug\FANLYC.xml
 C:\Fuentes\FANLYC\Fuentes\FANLYC\obj\x86\Debug\FANLYC.pdb
-C:\Fuentes\FANLYC\Fuentes\FANLYC\bin\Debug\FANLYC.exe
 C:\Fuentes\FANLYC\Fuentes\FANLYC\bin\Debug\FANLYC.pdb
 C:\Fuentes\FANLYC\Fuentes\FANLYC\bin\Debug\FANLYC.xml
 C:\Fuentes\FANLYC\Fuentes\FANLYC\obj\x86\Debug\ResolveAssemblyReference.cache

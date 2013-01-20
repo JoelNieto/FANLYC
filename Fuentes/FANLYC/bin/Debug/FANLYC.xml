@@ -6,11 +6,28 @@ FANLYC
 </name>
 </assembly>
 <members>
-<member name="T:FANLYC.dSetPacientes.PacientesMainDataTable">
+<member name="P:FANLYC.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:FANLYC.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:FANLYC.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="T:FANLYC.dSetPacientes.PacientesMainDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
 </member><member name="T:FANLYC.dSetPacientes.HospitalesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:FANLYC.dSetPacientes.PacienteRecupDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
@@ -22,11 +39,19 @@ Represents strongly named DataRow class.
 	<summary>
 Represents strongly named DataRow class.
 </summary>
+</member><member name="T:FANLYC.dSetPacientes.PacienteRecupRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
 </member><member name="T:FANLYC.dSetPacientes.PacientesMainRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
 </member><member name="T:FANLYC.dSetPacientes.HospitalesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:FANLYC.dSetPacientes.PacienteRecupRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
@@ -39,6 +64,10 @@ Represents a strongly typed in-memory cache of data.
 Represents the connection and commands used to retrieve and save data.
 </summary>
 </member><member name="T:FANLYC.dSetPacientesTableAdapters.HospitalesTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:FANLYC.dSetPacientesTableAdapters.PacienteRecupTableAdapter">
 	<summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
@@ -73,19 +102,6 @@ Used to sort self-referenced table's rows
 </member><member name="T:FANLYC.dSetPacientesTableAdapters.TableAdapterManager">
 	<summary>
 TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
-</summary>
-</member><member name="P:FANLYC.My.Resources.Resources.ResourceManager">
-	<summary>
-  Returns the cached ResourceManager instance used by this class.
-</summary>
-</member><member name="P:FANLYC.My.Resources.Resources.Culture">
-	<summary>
-  Overrides the current thread's CurrentUICulture property for all
-  resource lookups using this strongly typed resource class.
-</summary>
-</member><member name="T:FANLYC.My.Resources.Resources">
-	<summary>
-  A strongly-typed resource class, for looking up localized strings, etc.
 </summary>
 </member>
 </members>

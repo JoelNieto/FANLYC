@@ -92,7 +92,7 @@ Partial Class frmABMPacientes
         Me.butSalir = New System.Windows.Forms.Button()
         Me.butEditar = New System.Windows.Forms.Button()
         Me.butGrabar = New System.Windows.Forms.Button()
-        Me.DSetPacientes1 = New FANLYC.dSetPacientes()
+        Me.PacienteRecupTableAdapter1 = New FANLYC.dSetPacientesTableAdapters.PacienteRecupTableAdapter()
         Me.TabControl1.SuspendLayout()
         Me.tabDat.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -105,7 +105,6 @@ Partial Class frmABMPacientes
         Me.tabMedica.SuspendLayout()
         Me.GroupBox7.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
-        CType(Me.DSetPacientes1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -118,7 +117,7 @@ Partial Class frmABMPacientes
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(726, 325)
-        Me.TabControl1.TabIndex = 0
+        Me.TabControl1.TabIndex = 1
         '
         'tabDat
         '
@@ -290,7 +289,7 @@ Partial Class frmABMPacientes
         Me.txtNombre.Location = New System.Drawing.Point(115, 31)
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(199, 25)
-        Me.txtNombre.TabIndex = 0
+        Me.txtNombre.TabIndex = 1
         '
         'tabDireccion
         '
@@ -768,7 +767,7 @@ Partial Class frmABMPacientes
         Me.chkOtroDoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.chkOtroDoc.Location = New System.Drawing.Point(251, 27)
         Me.chkOtroDoc.Name = "chkOtroDoc"
-        Me.chkOtroDoc.Size = New System.Drawing.Size(60, 17)
+        Me.chkOtroDoc.Size = New System.Drawing.Size(68, 23)
         Me.chkOtroDoc.TabIndex = 1
         Me.chkOtroDoc.Text = "OTRO?"
         Me.chkOtroDoc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -834,10 +833,9 @@ Partial Class frmABMPacientes
         Me.butGrabar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.butGrabar.UseVisualStyleBackColor = False
         '
-        'DSetPacientes1
+        'PacienteRecupTableAdapter1
         '
-        Me.DSetPacientes1.DataSetName = "dSetPacientes"
-        Me.DSetPacientes1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        Me.PacienteRecupTableAdapter1.ClearBeforeFill = True
         '
         'frmABMPacientes
         '
@@ -875,7 +873,6 @@ Partial Class frmABMPacientes
         Me.GroupBox7.PerformLayout()
         Me.GroupBox6.ResumeLayout(False)
         Me.GroupBox6.PerformLayout()
-        CType(Me.DSetPacientes1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -948,5 +945,5 @@ Partial Class frmABMPacientes
     Friend WithEvents Label18 As System.Windows.Forms.Label
     Friend WithEvents txtTelOfic As System.Windows.Forms.TextBox
     Friend WithEvents txtTelCel As System.Windows.Forms.TextBox
-    Friend WithEvents DSetPacientes1 As FANLYC.dSetPacientes
+    Friend WithEvents PacienteRecupTableAdapter1 As FANLYC.dSetPacientesTableAdapters.PacienteRecupTableAdapter
 End Class
