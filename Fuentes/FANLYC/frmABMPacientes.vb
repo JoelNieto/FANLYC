@@ -1,11 +1,16 @@
 ﻿Public Class frmABMPacientes
 
     Public iNuevoPaciente As Boolean
+    Private bGrabado As Boolean
 
     Private Sub frmABMPacientes_FormClosing(sender As Object, e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
-        If MsgBox("Desea guardar temporal?", MsgBoxStyle.YesNo, "Salvado de Temporal") = MsgBoxResult.Yes Then
-            GuardaTemporal()
+        If bGrabado = False Then
+            If MsgBox("Desea guardar temporal?", MsgBoxStyle.YesNo, "Salvado de Temporal") = MsgBoxResult.Yes Then
+                GuardaTemporal()
+                MsgBox("Temporal: " + Paciente.IdPaciente.ToString, MsgBoxStyle.Information)
+            End If
         End If
+        LimpiarForma()
     End Sub
 
     Private Sub frmABMPacientes_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
@@ -372,6 +377,8 @@
                 Exit Sub
             End Try
             MsgBox("Paciente Grabado con Éxito: " + vbCrLf + "ID: " + iNuevoId.ToString, MsgBoxStyle.OkOnly)
+            bGrabado = True
+            Me.Close()
         End If
     End Sub
 
@@ -408,5 +415,27 @@
         End If
 
     End Function
+
+    Private Sub LimpiarForma()
+
+        txtNombre.Clear()
+        txtNombre2.Clear()
+        txtApellido.Clear()
+        txtApellido2.Clear()
+        'txtEdad.Clear()
+        txtBarrio.Clear()
+        txtDirComp.Clear()
+        txtCalle.Clear()
+        txtEdificio.Clear()
+        txtCalle.Clear()
+        txtPadre.Clear()
+        txtMadre.Clear()
+        txtApellidoMadre.Clear()
+        txtApellidoPadre.Clear()
+        txtTelCel.Clear()
+        txtTelDom.Clear()
+        txtTelOfic.Clear()
+        txtOtroDoctor.Clear()
+    End Sub
 
 End Class

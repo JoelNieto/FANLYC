@@ -22,6 +22,7 @@ Partial Class frmTablas
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmTablas))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.butEstados = New System.Windows.Forms.Button()
         Me.butDiagnostico = New System.Windows.Forms.Button()
@@ -119,8 +120,9 @@ Partial Class frmTablas
         Me.ClientSize = New System.Drawing.Size(489, 338)
         Me.Controls.Add(Me.Panel1)
         Me.Font = New System.Drawing.Font("Segoe UI Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmTablas"
-        Me.Text = "frmTablas"
+        Me.Text = "Tablas"
         Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
 

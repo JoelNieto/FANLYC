@@ -89,9 +89,10 @@ Partial Class frmABMPacientes
         Me.txtOtroDoctor = New System.Windows.Forms.TextBox()
         Me.chkOtroDoc = New System.Windows.Forms.CheckBox()
         Me.cboDoctor = New System.Windows.Forms.ComboBox()
+        Me.butSalir = New System.Windows.Forms.Button()
         Me.butEditar = New System.Windows.Forms.Button()
         Me.butGrabar = New System.Windows.Forms.Button()
-        Me.butSalir = New System.Windows.Forms.Button()
+        Me.DSetPacientes1 = New FANLYC.dSetPacientes()
         Me.TabControl1.SuspendLayout()
         Me.tabDat.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -104,6 +105,7 @@ Partial Class frmABMPacientes
         Me.tabMedica.SuspendLayout()
         Me.GroupBox7.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
+        CType(Me.DSetPacientes1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -766,7 +768,7 @@ Partial Class frmABMPacientes
         Me.chkOtroDoc.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.chkOtroDoc.Location = New System.Drawing.Point(251, 27)
         Me.chkOtroDoc.Name = "chkOtroDoc"
-        Me.chkOtroDoc.Size = New System.Drawing.Size(60, 17)
+        Me.chkOtroDoc.Size = New System.Drawing.Size(68, 23)
         Me.chkOtroDoc.TabIndex = 1
         Me.chkOtroDoc.Text = "OTRO?"
         Me.chkOtroDoc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -780,6 +782,23 @@ Partial Class frmABMPacientes
         Me.cboDoctor.Name = "cboDoctor"
         Me.cboDoctor.Size = New System.Drawing.Size(191, 25)
         Me.cboDoctor.TabIndex = 0
+        '
+        'butSalir
+        '
+        Me.butSalir.BackColor = System.Drawing.Color.LightCoral
+        Me.butSalir.FlatAppearance.BorderSize = 0
+        Me.butSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.butSalir.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.butSalir.ForeColor = System.Drawing.Color.White
+        Me.butSalir.Image = CType(resources.GetObject("butSalir.Image"), System.Drawing.Image)
+        Me.butSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.butSalir.Location = New System.Drawing.Point(366, 390)
+        Me.butSalir.Name = "butSalir"
+        Me.butSalir.Size = New System.Drawing.Size(113, 38)
+        Me.butSalir.TabIndex = 3
+        Me.butSalir.Text = "Salir"
+        Me.butSalir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.butSalir.UseVisualStyleBackColor = False
         '
         'butEditar
         '
@@ -815,22 +834,10 @@ Partial Class frmABMPacientes
         Me.butGrabar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.butGrabar.UseVisualStyleBackColor = False
         '
-        'butSalir
+        'DSetPacientes1
         '
-        Me.butSalir.BackColor = System.Drawing.Color.LightCoral
-        Me.butSalir.FlatAppearance.BorderSize = 0
-        Me.butSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.butSalir.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.butSalir.ForeColor = System.Drawing.Color.White
-        Me.butSalir.Image = CType(resources.GetObject("butSalir.Image"), System.Drawing.Image)
-        Me.butSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.butSalir.Location = New System.Drawing.Point(366, 390)
-        Me.butSalir.Name = "butSalir"
-        Me.butSalir.Size = New System.Drawing.Size(113, 38)
-        Me.butSalir.TabIndex = 3
-        Me.butSalir.Text = "Salir"
-        Me.butSalir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.butSalir.UseVisualStyleBackColor = False
+        Me.DSetPacientes1.DataSetName = "dSetPacientes"
+        Me.DSetPacientes1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'frmABMPacientes
         '
@@ -868,6 +875,7 @@ Partial Class frmABMPacientes
         Me.GroupBox7.PerformLayout()
         Me.GroupBox6.ResumeLayout(False)
         Me.GroupBox6.PerformLayout()
+        CType(Me.DSetPacientes1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -940,4 +948,5 @@ Partial Class frmABMPacientes
     Friend WithEvents Label18 As System.Windows.Forms.Label
     Friend WithEvents txtTelOfic As System.Windows.Forms.TextBox
     Friend WithEvents txtTelCel As System.Windows.Forms.TextBox
+    Friend WithEvents DSetPacientes1 As FANLYC.dSetPacientes
 End Class

@@ -77,12 +77,17 @@
     <ApplicationIcon>fanlyc.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FANLYC, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <ExecutableExtension>.exe</ExecutableExtension>
+    </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
@@ -109,10 +114,24 @@
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="clsPacientes.vb" />
+    <Compile Include="dSetPacientes.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dSetPacientes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dSetPacientes.vb">
+      <DependentUpon>dSetPacientes.xsd</DependentUpon>
+    </Compile>
     <Compile Include="frmABMPacientes.Designer.vb">
       <DependentUpon>frmABMPacientes.vb</DependentUpon>
     </Compile>
     <Compile Include="frmABMPacientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsulta.Designer.vb">
+      <DependentUpon>frmConsulta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmConsulta.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmHome.vb">
@@ -163,6 +182,9 @@
       <DependentUpon>frmABMPacientes.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmConsulta.resx">
+      <DependentUpon>frmConsulta.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmHome.resx">
       <DependentUpon>frmHome.vb</DependentUpon>
     </EmbeddedResource>
@@ -185,6 +207,17 @@
   <ItemGroup>
     <None Include="App.config">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="dSetPacientes.xsc">
+      <DependentUpon>dSetPacientes.xsd</DependentUpon>
+    </None>
+    <None Include="dSetPacientes.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dSetPacientes.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dSetPacientes.xss">
+      <DependentUpon>dSetPacientes.xsd</DependentUpon>
     </None>
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
@@ -272,6 +305,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="fanlyc.ico" />
+    <None Include="Resources\search48.png" />
+    <None Include="Resources\search64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

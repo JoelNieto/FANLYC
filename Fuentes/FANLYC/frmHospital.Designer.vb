@@ -22,6 +22,7 @@ Partial Class frmHospital
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmHospital))
         Me.lsvHospital = New System.Windows.Forms.ListView()
         Me.grpHospitales = New System.Windows.Forms.GroupBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -40,7 +41,7 @@ Partial Class frmHospital
         Me.lsvHospital.GridLines = True
         Me.lsvHospital.Location = New System.Drawing.Point(50, 31)
         Me.lsvHospital.Name = "lsvHospital"
-        Me.lsvHospital.Size = New System.Drawing.Size(351, 97)
+        Me.lsvHospital.Size = New System.Drawing.Size(409, 97)
         Me.lsvHospital.TabIndex = 0
         Me.lsvHospital.UseCompatibleStateImageBehavior = False
         Me.lsvHospital.View = System.Windows.Forms.View.Details
@@ -54,7 +55,7 @@ Partial Class frmHospital
         Me.grpHospitales.Font = New System.Drawing.Font("Segoe UI Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grpHospitales.Location = New System.Drawing.Point(50, 147)
         Me.grpHospitales.Name = "grpHospitales"
-        Me.grpHospitales.Size = New System.Drawing.Size(351, 97)
+        Me.grpHospitales.Size = New System.Drawing.Size(409, 97)
         Me.grpHospitales.TabIndex = 1
         Me.grpHospitales.TabStop = False
         Me.grpHospitales.Text = "Hospitales"
@@ -107,7 +108,7 @@ Partial Class frmHospital
         Me.butSalir.Font = New System.Drawing.Font("Segoe UI Light", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.butSalir.Image = Global.FANLYC.My.Resources.Resources.undo24
         Me.butSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.butSalir.Location = New System.Drawing.Point(128, 265)
+        Me.butSalir.Location = New System.Drawing.Point(188, 265)
         Me.butSalir.Name = "butSalir"
         Me.butSalir.Size = New System.Drawing.Size(75, 23)
         Me.butSalir.TabIndex = 4
@@ -123,7 +124,7 @@ Partial Class frmHospital
         Me.butEliminar.Font = New System.Drawing.Font("Segoe UI Light", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.butEliminar.Image = Global.FANLYC.My.Resources.Resources.stop_red24
         Me.butEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.butEliminar.Location = New System.Drawing.Point(221, 265)
+        Me.butEliminar.Location = New System.Drawing.Point(287, 265)
         Me.butEliminar.Name = "butEliminar"
         Me.butEliminar.Size = New System.Drawing.Size(75, 23)
         Me.butEliminar.TabIndex = 3
@@ -139,7 +140,7 @@ Partial Class frmHospital
         Me.butAgregar.Font = New System.Drawing.Font("Segoe UI Light", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.butAgregar.Image = Global.FANLYC.My.Resources.Resources.success24
         Me.butAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.butAgregar.Location = New System.Drawing.Point(312, 265)
+        Me.butAgregar.Location = New System.Drawing.Point(384, 265)
         Me.butAgregar.Name = "butAgregar"
         Me.butAgregar.Size = New System.Drawing.Size(75, 23)
         Me.butAgregar.TabIndex = 2
@@ -152,7 +153,7 @@ Partial Class frmHospital
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(450, 305)
+        Me.ClientSize = New System.Drawing.Size(516, 305)
         Me.Controls.Add(Me.butSalir)
         Me.Controls.Add(Me.butEliminar)
         Me.Controls.Add(Me.butAgregar)
@@ -160,6 +161,7 @@ Partial Class frmHospital
         Me.Controls.Add(Me.lsvHospital)
         Me.Font = New System.Drawing.Font("Segoe UI Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmHospital"
         Me.Text = "Hospitales"
         Me.grpHospitales.ResumeLayout(False)

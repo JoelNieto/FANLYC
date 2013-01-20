@@ -123,6 +123,20 @@ Namespace My.Resources
             End Get
         End Property
         
+        Friend ReadOnly Property search48() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("search48", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        Friend ReadOnly Property search64() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("search64", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
         Friend ReadOnly Property stop_red24() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("stop-red24", resourceCulture)

@@ -9,13 +9,16 @@
             MsgBox("Conexión Fallida")
             Exit Sub
         End If
-
         Me.Text = "INICIO  -  " + objDataBase.DataBaseName
     End Sub
 
     Private Sub butAgregar_Click(sender As System.Object, e As System.EventArgs) Handles butAgregar.Click
         frmABMPacientes.iNuevoPaciente = True
         frmABMPacientes.ShowDialog()
+    End Sub
+
+    Private Sub butConsultar_Click(sender As System.Object, e As System.EventArgs) Handles butConsultar.Click
+        frmConsulta.ShowDialog()
     End Sub
 
 End Class

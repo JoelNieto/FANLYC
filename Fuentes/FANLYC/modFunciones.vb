@@ -47,7 +47,7 @@
             GuardaHeaderTemporal()
             GuardaDireccionTemporal()
             GuardaTelefonoTemporal()
-            GuardaTelefonoTemporal()
+            GuardaPadresTemporal()
         Catch ex As Exception
             MsgBox("Error al guardar temporal: " + ex.Source.ToUpper + vbCrLf + ex.Message.ToString)
         End Try
@@ -109,7 +109,7 @@
 
     End Sub
 
-    Private Sub GuardaTelefonosTemporal()
+    Private Sub GuardaPadresTemporal()
         Dim lParametros As New List(Of String)
         Dim lTipos As New List(Of String)
 
@@ -144,10 +144,10 @@
 
 
         If bTemporal = True Then
-            sSp = "LimpiarTemporal"
+            sSp = "LimpiaTemporal"
             Id = Paciente.IdPaciente
         Else
-            sSp = "LimpiarPaciente"
+            sSp = "LimpiaPaciente"
             Id = iNuevoId
         End If
 
