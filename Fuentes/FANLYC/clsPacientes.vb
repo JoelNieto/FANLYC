@@ -223,7 +223,7 @@
             Return sNomMadre
         End Get
         Set(value As String)
-            sNombre = value
+            sNomMadre = value
         End Set
     End Property
 

@@ -407,16 +407,6 @@
             ValidaFunction = True
         End If
 
-
-
-
     End Function
 
-    Private Sub txtNombre_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtNombre.TextChanged
-
-    End Sub
-
-    Private Sub txtMadre_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtMadre.TextChanged
-
-    End Sub
 End Class

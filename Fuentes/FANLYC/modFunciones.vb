@@ -42,7 +42,6 @@
 
     End Function
 
-
     Public Sub GuardaTemporal()
         Try
             GuardaHeaderTemporal()

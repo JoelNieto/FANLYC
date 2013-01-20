@@ -581,7 +581,7 @@ Partial Class frmABMPacientes
         Me.txtApellidoPadre.Location = New System.Drawing.Point(442, 71)
         Me.txtApellidoPadre.Name = "txtApellidoPadre"
         Me.txtApellidoPadre.Size = New System.Drawing.Size(175, 25)
-        Me.txtApellidoPadre.TabIndex = 7
+        Me.txtApellidoPadre.TabIndex = 3
         '
         'txtApellidoMadre
         '
@@ -590,7 +590,7 @@ Partial Class frmABMPacientes
         Me.txtApellidoMadre.Location = New System.Drawing.Point(442, 22)
         Me.txtApellidoMadre.Name = "txtApellidoMadre"
         Me.txtApellidoMadre.Size = New System.Drawing.Size(175, 25)
-        Me.txtApellidoMadre.TabIndex = 6
+        Me.txtApellidoMadre.TabIndex = 1
         '
         'Label23
         '
