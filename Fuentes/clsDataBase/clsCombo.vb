@@ -56,4 +56,9 @@ Public Class clsCombo
         Cbo.DisplayMember = "DISPLAY"
         Cbo.ValueMember = "VALOR"
     End Sub
+
+    Public Sub SeteaIndice(Cbo As Windows.Forms.ComboBox, Valor As String)
+        Cbo.SelectedValue = CInt(Valor)
+    End Sub
+
 End Class

@@ -8,7 +8,6 @@
         Me.CenterToScreen()
     End Sub
 
-
     Private Sub mnuConsultar_Click(sender As System.Object, e As System.EventArgs) Handles mnuConsultar.Click
         Paciente.IdPaciente = grdPacientes.CurrentRow.Cells(0).Value
         frmABMPacientes.iNuevoPaciente = False

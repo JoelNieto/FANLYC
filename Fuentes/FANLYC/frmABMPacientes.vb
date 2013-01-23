@@ -2,6 +2,7 @@
 
     Public iNuevoPaciente As Boolean
     Private bGrabado As Boolean
+    Public RecPaciente As New DataTable
 
     Private Sub frmABMPacientes_FormClosing(sender As Object, e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         If bGrabado = False Then
@@ -34,7 +35,9 @@
             End If
             InicializaPaciente()
         Else
-
+            PacienteRecupTableAdapter1.FiltraPacientes(Paciente.IdPaciente)
+            RecPaciente = PacienteRecupTableAdapter1.GetData()
+            RecuperarPaciente(RecPaciente)
         End If
     End Sub
 
@@ -206,11 +209,11 @@
         If datFecNac.Value > Now Then
             MsgBox("Fecha incorrecta, favor corregir")
             Exit Sub
+        Else
+            Paciente.FecNac = datFecNac.Value
+            txtEdad.Text = objGrales.CalculaEdad(datFecNac.Value)
+            Paciente.EdadMeses = objGrales.CalculaEdadMeses(datFecNac.Value)
         End If
-        txtEdad.Text = DateDiff(DateInterval.Year, datFecNac.Value, Now).ToString
-        Paciente.FecNac = datFecNac.Value
-        Paciente.Edad = Val(txtEdad.Text)
-        Paciente.EdadMeses = CalculaEdadMes(datFecNac.Value)
     End Sub
 
     Private Sub txtNombre_GotFocus(sender As Object, e As System.EventArgs) Handles txtNombre.GotFocus
@@ -273,7 +276,7 @@
     End Sub
 
     Private Sub txtApto_LostFocus(sender As Object, e As System.EventArgs) Handles txtApto.LostFocus
-        Paciente.Calle = txtApto.Text
+        Paciente.Casa = txtApto.Text
         ArmaDireccion()
     End Sub
 
@@ -439,4 +442,7 @@
         txtOtroDoctor.Clear()
     End Sub
 
+    Private Sub txtApto_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtApto.TextChanged
+
+    End Sub
 End Class

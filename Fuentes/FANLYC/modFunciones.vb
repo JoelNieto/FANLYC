@@ -51,7 +51,6 @@
         Catch ex As Exception
             MsgBox("Error al guardar temporal: " + ex.Source.ToUpper + vbCrLf + ex.Message.ToString)
         End Try
-        
     End Sub
 
     Private Sub GuardaHeaderTemporal()
@@ -159,5 +158,20 @@
     Public Function CalculaEdadMes(fecNac As Date) As Integer
         CalculaEdadMes = CInt(DateDiff(DateInterval.Month, fecNac, Now))
     End Function
+
+    Public Sub RecuperarPaciente(dtPaciente As DataTable)
+        With dtPaciente.Rows(0)
+            frmABMPacientes.txtNombre.Text = .Item("Nombre")
+            frmABMPacientes.txtNombre2.Text = .Item("Nombre2")
+            frmABMPacientes.txtApellido.Text = .Item("Apellido")
+            frmABMPacientes.txtApellido2.Text = .Item("Apellido2")
+            frmABMPacientes.txtPadre.Text = .Item("NomPadre")
+            frmABMPacientes.txtApellidoPadre.Text = .Item("ApelPadre")
+            frmABMPacientes.txtMadre.Text = .Item("NomMadre")
+            frmABMPacientes.txtApellidoMadre.Text = .Item("ApelMadre")
+            objCombo.SeteaIndice(frmABMPacientes.cboSexo, .Item("Sexo"))
+        End With
+
+    End Sub
 
 End Module
