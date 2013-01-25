@@ -305,6 +305,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="fanlyc.ico" />
+    <None Include="Resources\go-back481.png" />
     <None Include="Resources\search48.png" />
     <None Include="Resources\search64.png" />
   </ItemGroup>

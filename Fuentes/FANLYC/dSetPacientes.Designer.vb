@@ -3447,36 +3447,36 @@ Namespace dSetPacientesTableAdapters
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT         PacientesHeader.id_paciente AS ID, PacientesHeader.cod_hospital AS"& _ 
-                " Hospital, PacientesHeader.cod_doctor AS Doctor, PacientesHeader.cod_estado_paci"& _ 
-                "ente AS Estado, PacientesHeader.cod_diagnostico AS Diagnostico, PacientesHeader."& _ 
-                "txt_nombre AS Nombre, PacientesHeader.txt_nombre2 AS Nombre2, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                "& _ 
-                "          PacientesHeader.txt_apellido AS Apellido, PacientesHeader.txt_apellido"& _ 
-                "2 AS Apellido, PacientesHeader.cod_sexo AS Sexo, PacientesHeader.fec_nacimiento "& _ 
-                "AS [Fec Nac], PacientesHeader.edad_anos AS Edad, PacientesHeader.edad_meses AS ["& _ 
-                "Edad Meses], PacientesDireccion.cod_provincia AS Provincia, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                  "& _ 
-                "        PacientesDireccion.cod_distrito AS Distrito, PacientesDireccion.cod_corr"& _ 
-                "egimiento AS Corregimiento, PacientesDireccion.txt_barrio AS Barrio, PacientesDi"& _ 
-                "reccion.txt_calle AS Calle, PacientesDireccion.txt_edificio AS Edificio, Pacient"& _ 
-                "esDireccion.txt_apto AS Apto, PacientesDireccion.txt_direccion_completa AS DIrec"& _ 
-                "cion, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                          PacientesTelef.txt_telef AS TelDomi, Pacientes"& _ 
-                "Telef_1.txt_telef AS TelCel, PacientesTelef_2.txt_telef AS TelOfic, PacientesPad"& _ 
-                "res.txt_nombre_padre AS NomPadre, PacientesPadres.txt_apellidos_padre AS ApelPad"& _ 
-                "re, PacientesPadres_1.txt_nombre_padre AS NomMadre, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                          "& _ 
-                "PacientesPadres_1.txt_apellidos_padre AS ApelMadre"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM             PacientesHe"& _ 
-                "ader INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                          PacientesDireccion ON PacientesHeader"& _ 
-                ".id_paciente = PacientesDireccion.id_paciente INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                      "& _ 
-                "    PacientesPadres ON PacientesHeader.id_paciente = PacientesPadres.id_paciente"& _ 
-                " INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                          PacientesTelef ON PacientesHeader.id_paci"& _ 
-                "ente = PacientesTelef.id_paciente INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                          Paciente"& _ 
-                "sTelef AS PacientesTelef_1 ON PacientesHeader.id_paciente = PacientesTelef_1.id_"& _ 
-                "paciente INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                          PacientesTelef AS PacientesTelef_"& _ 
-                "2 ON PacientesHeader.id_paciente = PacientesTelef_2.id_paciente INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"    "& _ 
-                "                      PacientesPadres AS PacientesPadres_1 ON PacientesHeader.id"& _ 
-                "_paciente = PacientesPadres_1.id_paciente"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE         (PacientesTelef.cod_tip"& _ 
-                "o_telef = 1) AND (PacientesPadres.cod_padres = 1) AND (PacientesTelef_1.cod_tipo"& _ 
-                "_telef = 2) AND (PacientesTelef_2.cod_tipo_telef = 3) AND (PacientesPadres_1.cod"& _ 
-                "_padres = 2) AND (PacientesHeader.id_paciente = @id_paciente)"
+            Me._commandCollection(1).CommandText = "SELECT         PacientesHeader.id_paciente AS ID, PacientesHeader.cod_hospital AS" & _
+                " Hospital, PacientesHeader.cod_doctor AS Doctor, PacientesHeader.cod_estado_paci" & _
+                "ente AS Estado, PacientesHeader.cod_diagnostico AS Diagnostico, PacientesHeader." & _
+                "txt_nombre AS Nombre, PacientesHeader.txt_nombre2 AS Nombre2, " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "                " & _
+                "          PacientesHeader.txt_apellido AS Apellido, PacientesHeader.txt_apellido" & _
+                "2 AS Apellido2, PacientesHeader.cod_sexo AS Sexo, PacientesHeader.fec_nacimiento" & _
+                " AS [Fec Nac], PacientesHeader.edad_anos AS Edad, PacientesHeader.edad_meses AS " & _
+                "[Edad Meses], PacientesDireccion.cod_provincia AS Provincia, " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "                 " & _
+                "         PacientesDireccion.cod_distrito AS Distrito, PacientesDireccion.cod_cor" & _
+                "regimiento AS Corregimiento, PacientesDireccion.txt_barrio AS Barrio, PacientesD" & _
+                "ireccion.txt_calle AS Calle, PacientesDireccion.txt_edificio AS Edificio, Pacien" & _
+                "tesDireccion.txt_apto AS Apto, PacientesDireccion.txt_direccion_completa AS DIre" & _
+                "ccion, " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "                          PacientesTelef.txt_telef AS TelDomi, Paciente" & _
+                "sTelef_1.txt_telef AS TelCel, PacientesTelef_2.txt_telef AS TelOfic, PacientesPa" & _
+                "dres.txt_nombre_padre AS NomPadre, PacientesPadres.txt_apellidos_padre AS ApelPa" & _
+                "dre, PacientesPadres_1.txt_nombre_padre AS NomMadre, " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "                         " & _
+                " PacientesPadres_1.txt_apellidos_padre AS ApelMadre" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FROM             PacientesH" & _
+                "eader INNER JOIN" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "                          PacientesDireccion ON PacientesHeade" & _
+                "r.id_paciente = PacientesDireccion.id_paciente INNER JOIN" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "                     " & _
+                "     PacientesPadres ON PacientesHeader.id_paciente = PacientesPadres.id_pacient" & _
+                "e INNER JOIN" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "                          PacientesTelef ON PacientesHeader.id_pac" & _
+                "iente = PacientesTelef.id_paciente INNER JOIN" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "                          Pacient" & _
+                "esTelef AS PacientesTelef_1 ON PacientesHeader.id_paciente = PacientesTelef_1.id" & _
+                "_paciente INNER JOIN" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "                          PacientesTelef AS PacientesTelef" & _
+                "_2 ON PacientesHeader.id_paciente = PacientesTelef_2.id_paciente INNER JOIN" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "   " & _
+                "                       PacientesPadres AS PacientesPadres_1 ON PacientesHeader.i" & _
+                "d_paciente = PacientesPadres_1.id_paciente" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "WHERE         (PacientesTelef.cod_ti" & _
+                "po_telef = 1) AND (PacientesPadres.cod_padres = 1) AND (PacientesTelef_1.cod_tip" & _
+                "o_telef = 2) AND (PacientesTelef_2.cod_tipo_telef = 3) AND (PacientesPadres_1.co" & _
+                "d_padres = 2) AND (PacientesHeader.id_paciente = @id_paciente)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id_paciente", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "ID", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub

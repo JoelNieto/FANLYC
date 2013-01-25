@@ -39,6 +39,7 @@ Partial Class frmConsulta
         Me.PacientesMainBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DSetPacientes = New FANLYC.dSetPacientes()
         Me.PacientesMainTableAdapter = New FANLYC.dSetPacientesTableAdapters.PacientesMainTableAdapter()
+        Me.butSalir = New System.Windows.Forms.Button()
         CType(Me.grdPacientes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.mnuConsulta.SuspendLayout()
         CType(Me.PacientesMainBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -155,12 +156,30 @@ Partial Class frmConsulta
         '
         Me.PacientesMainTableAdapter.ClearBeforeFill = True
         '
+        'butSalir
+        '
+        Me.butSalir.BackColor = System.Drawing.Color.LightCoral
+        Me.butSalir.FlatAppearance.BorderSize = 0
+        Me.butSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.butSalir.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.butSalir.ForeColor = System.Drawing.Color.White
+        Me.butSalir.Image = Global.FANLYC.My.Resources.Resources.go_back482
+        Me.butSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.butSalir.Location = New System.Drawing.Point(579, 430)
+        Me.butSalir.Name = "butSalir"
+        Me.butSalir.Size = New System.Drawing.Size(108, 47)
+        Me.butSalir.TabIndex = 1
+        Me.butSalir.Text = "Salir"
+        Me.butSalir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.butSalir.UseVisualStyleBackColor = False
+        '
         'frmConsulta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(725, 513)
+        Me.ClientSize = New System.Drawing.Size(719, 513)
+        Me.Controls.Add(Me.butSalir)
         Me.Controls.Add(Me.grdPacientes)
         Me.Font = New System.Drawing.Font("Segoe UI Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow
@@ -189,4 +208,5 @@ Partial Class frmConsulta
     Friend WithEvents DistritoDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents mnuConsulta As System.Windows.Forms.ContextMenuStrip
     Friend WithEvents mnuConsultar As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents butSalir As System.Windows.Forms.Button
 End Class

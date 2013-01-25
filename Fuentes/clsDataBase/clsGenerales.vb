@@ -21,8 +21,9 @@
         If Now > FecPrueba Then
             Meses = DateDiff(DateInterval.Month, FecPrueba, Now)
         Else
-            Meses = DateDiff(DateInterval.Month, Now, FecPrueba)
+            Meses = DateDiff(DateInterval.Month, FecPrueba, DateAdd(DateInterval.Year, 1, Now))
         End If
         CalculaEdadMeses = Meses
     End Function
+
 End Class

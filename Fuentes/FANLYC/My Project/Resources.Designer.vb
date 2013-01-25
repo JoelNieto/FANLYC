@@ -81,6 +81,20 @@ Namespace My.Resources
             End Get
         End Property
         
+        Friend ReadOnly Property go_back481() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("go-back481", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        Friend ReadOnly Property go_back482() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("go-back482", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
         Friend ReadOnly Property Hospital() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Hospital", resourceCulture)

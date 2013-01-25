@@ -1,14 +1,17 @@
 ﻿Public Class frmABMPacientes
 
     Public iNuevoPaciente As Boolean
+    Public bConsulta As Boolean
     Private bGrabado As Boolean
     Public RecPaciente As New DataTable
 
     Private Sub frmABMPacientes_FormClosing(sender As Object, e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
-        If bGrabado = False Then
-            If MsgBox("Desea guardar temporal?", MsgBoxStyle.YesNo, "Salvado de Temporal") = MsgBoxResult.Yes Then
-                GuardaTemporal()
-                MsgBox("Temporal: " + Paciente.IdPaciente.ToString, MsgBoxStyle.Information)
+        If bConsulta = False Then
+            If bGrabado = False Then
+                If MsgBox("Desea guardar temporal?", MsgBoxStyle.YesNo, "Salvado de Temporal") = MsgBoxResult.Yes Then
+                    GuardaTemporal()
+                    MsgBox("Temporal: " + Paciente.IdPaciente.ToString, MsgBoxStyle.Information)
+                End If
             End If
         End If
         LimpiarForma()
@@ -35,9 +38,9 @@
             End If
             InicializaPaciente()
         Else
-            PacienteRecupTableAdapter1.FiltraPacientes(Paciente.IdPaciente)
-            RecPaciente = PacienteRecupTableAdapter1.GetData()
+            RecPaciente = PacienteRecupTableAdapter1.FiltraPacientes(Paciente.IdPaciente)
             RecuperarPaciente(RecPaciente)
+            BloqueaForma()
         End If
     End Sub
 
@@ -107,6 +110,7 @@
     Private Sub cboProvincia_SelectedValueChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles cboProvincia.SelectedValueChanged
         If IsNumeric(cboProvincia.SelectedValue.ToString) Then
             CargaComboDistrito()
+            CargaComboCorregimiento()
             Paciente.Provincia = CInt(cboProvincia.SelectedValue.ToString)
         End If
     End Sub
@@ -255,7 +259,7 @@
     End Sub
 
     Private Sub txtEdad_TextChanged(sender As Object, e As System.EventArgs) Handles txtEdad.TextChanged
-        Paciente.Edad = CInt(txtEdad.Text)
+        Paciente.Edad = CInt(Val(txtEdad.Text))
     End Sub
 
     Private Sub cboCorregimiento_SelectedValueChanged(sender As Object, e As System.EventArgs) Handles cboCorregimiento.SelectedValueChanged
@@ -371,6 +375,11 @@
 
     Private Sub butGrabar_Click(sender As System.Object, e As System.EventArgs) Handles butGrabar.Click
         If ValidaFunction() = True Then
+            If chkOtroDoc.CheckState = CheckState.Checked Then
+                If Len(txtOtroDoctor.Text) <> 0 Then
+                    Paciente.Doctor = AgregaOtroDoctor(txtOtroDoctor.Text)
+                End If
+            End If
             Try
                 GuardaTemporal()
                 iNuevoId = ObtieneNuevoId()
@@ -426,12 +435,12 @@
         txtNombre2.Clear()
         txtApellido.Clear()
         txtApellido2.Clear()
-        'txtEdad.Clear()
+        txtEdad.Clear()
         txtBarrio.Clear()
-        txtDirComp.Clear()
         txtCalle.Clear()
         txtEdificio.Clear()
-        txtCalle.Clear()
+        txtApto.Clear()
+        txtDirComp.Clear()
         txtPadre.Clear()
         txtMadre.Clear()
         txtApellidoMadre.Clear()
@@ -440,9 +449,38 @@
         txtTelDom.Clear()
         txtTelOfic.Clear()
         txtOtroDoctor.Clear()
-    End Sub
-
-    Private Sub txtApto_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtApto.TextChanged
 
     End Sub
+
+    Private Sub BloqueaForma()
+        txtNombre.Enabled = False
+        txtNombre2.Enabled = False
+        txtApellido.Enabled = False
+        txtApellido2.Enabled = False
+        txtEdad.Enabled = False
+        txtBarrio.Enabled = False
+        txtCalle.Enabled = False
+        txtEdificio.Enabled = False
+        txtApto.Enabled = False
+        txtDirComp.Enabled = False
+        txtPadre.Enabled = False
+        txtMadre.Enabled = False
+        txtApellidoMadre.Enabled = False
+        txtApellidoPadre.Enabled = False
+        txtTelCel.Enabled = False
+        txtTelDom.Enabled = False
+        txtTelOfic.Enabled = False
+        txtOtroDoctor.Enabled = False
+        cboProvincia.Enabled = False
+        cboDistrito.Enabled = False
+        cboCorregimiento.Enabled = False
+        cboEstado.Enabled = False
+        cboHospital.Enabled = False
+        cboDoctor.Enabled = False
+        cboDiagnostico.Enabled = False
+        cboSexo.Enabled = False
+        datFecNac.Enabled = False
+        chkOtroDoc.Enabled = False
+    End Sub
+
 End Class

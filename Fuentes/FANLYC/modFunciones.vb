@@ -169,9 +169,58 @@
             frmABMPacientes.txtApellidoPadre.Text = .Item("ApelPadre")
             frmABMPacientes.txtMadre.Text = .Item("NomMadre")
             frmABMPacientes.txtApellidoMadre.Text = .Item("ApelMadre")
+            frmABMPacientes.txtPadre.Text = .Item("NomPadre")
+            frmABMPacientes.txtApellidoPadre.Text = .Item("ApelPadre")
             objCombo.SeteaIndice(frmABMPacientes.cboSexo, .Item("Sexo"))
+            objCombo.SeteaIndice(frmABMPacientes.cboProvincia, .Item("Provincia"))
+            objCombo.SeteaIndice(frmABMPacientes.cboDistrito, .Item("Distrito"))
+            objCombo.SeteaIndice(frmABMPacientes.cboCorregimiento, .Item("Corregimiento"))
+            frmABMPacientes.txtBarrio.Text = .Item("Barrio")
+            frmABMPacientes.txtCalle.Text = .Item("Calle")
+            frmABMPacientes.txtEdificio.Text = .Item("Edificio")
+            frmABMPacientes.txtApto.Text = .Item("Apto")
+            frmABMPacientes.txtDirComp.Text = .Item("Direccion")
+            frmABMPacientes.txtTelCel.Text = .Item("TelCel")
+            frmABMPacientes.txtTelDom.Text = .Item("TelDomi")
+            frmABMPacientes.txtTelOfic.Text = .Item("TelOfic")
+            objCombo.SeteaIndice(frmABMPacientes.cboHospital, .Item("Hospital"))
+            objCombo.SeteaIndice(frmABMPacientes.cboEstado, .Item("Estado"))
+            objCombo.SeteaIndice(frmABMPacientes.cboDiagnostico, .Item("Diagnostico"))
+            objCombo.SeteaIndice(frmABMPacientes.cboDoctor, .Item("Doctor"))
+            frmABMPacientes.datFecNac.Value = .Item("Fec Nac")
+
         End With
 
+        dtPaciente.Clear()
     End Sub
+
+    Public Function AgregaOtroDoctor(NombreDoc As String) As Integer
+        Dim iCodDoctor As Integer
+        Dim lCondiciones As New List(Of String)
+        Dim lFiltros As New List(Of String)
+        Dim lValores As New List(Of String)
+        Dim lTipos As New List(Of String)
+        Dim lCampos As New List(Of String)
+
+        lCondiciones.Add("NO TIENE")
+        lFiltros.Add("NO TIENE")
+
+        lCampos.Add("cod_doctor")
+        lCampos.Add("txt_nom_doctor")
+
+        lTipos.Add("NUMERO")
+        lTipos.Add("TEXTO")
+
+        iCodDoctor = CInt(objScripts.BuscaUltimoIndice("Doctores", "cod_doctor", lCondiciones, lFiltros, objDataBase.Conexion) + 1)
+
+        lValores.Add(iCodDoctor.ToString)
+
+        lValores.Add(NombreDoc.ToString)
+
+        objScripts.Inserta("Doctores", lCampos, lTipos, lValores, objDataBase.Conexion)
+
+        AgregaOtroDoctor = iCodDoctor
+
+    End Function
 
 End Module
