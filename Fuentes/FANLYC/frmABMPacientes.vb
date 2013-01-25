@@ -21,6 +21,7 @@
 
         Me.CenterToScreen()
         CargaControles()
+        InicializaPaciente()
         If iNuevoPaciente = True Then
             Dim Filtros As New List(Of String)
             Dim Condiciones As New List(Of String)
@@ -36,7 +37,6 @@
             If objScripts.Inserta("PacientesHeaderTmp", Campo, Tipo, Valor, objDataBase.Conexion) = False Then
                 MsgBox("Error al generar temporal")
             End If
-            InicializaPaciente()
         Else
             RecPaciente = PacienteRecupTableAdapter1.FiltraPacientes(Paciente.IdPaciente)
             RecuperarPaciente(RecPaciente)
@@ -382,7 +382,12 @@
             End If
             Try
                 GuardaTemporal()
-                iNuevoId = ObtieneNuevoId()
+                If iNuevoPaciente = True Then
+                    iNuevoId = ObtieneNuevoId()
+                Else
+                    iNuevoId = Paciente.IdPaciente
+                End If
+
                 TrasladaTemporal()
             Catch ex As Exception
                 LimpiarPacientes(False)
@@ -483,4 +488,38 @@
         chkOtroDoc.Enabled = False
     End Sub
 
+    Private Sub LiberaForma()
+        txtNombre.Enabled = True
+        txtNombre2.Enabled = True
+        txtApellido.Enabled = True
+        txtApellido2.Enabled = True
+        txtEdad.Enabled = True
+        txtBarrio.Enabled = True
+        txtCalle.Enabled = True
+        txtEdificio.Enabled = True
+        txtApto.Enabled = True
+        txtDirComp.Enabled = True
+        txtPadre.Enabled = True
+        txtMadre.Enabled = True
+        txtApellidoMadre.Enabled = True
+        txtApellidoPadre.Enabled = True
+        txtTelCel.Enabled = True
+        txtTelDom.Enabled = True
+        txtTelOfic.Enabled = True
+        txtOtroDoctor.Enabled = True
+        cboProvincia.Enabled = True
+        cboDistrito.Enabled = True
+        cboCorregimiento.Enabled = True
+        cboEstado.Enabled = True
+        cboHospital.Enabled = True
+        cboDoctor.Enabled = True
+        cboDiagnostico.Enabled = True
+        cboSexo.Enabled = True
+        datFecNac.Enabled = True
+        chkOtroDoc.Enabled = True
+    End Sub
+
+    Private Sub butEditar_Click(sender As System.Object, e As System.EventArgs) Handles butEditar.Click
+        LiberaForma()
+    End Sub
 End Class

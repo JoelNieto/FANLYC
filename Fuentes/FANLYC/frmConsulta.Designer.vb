@@ -163,7 +163,6 @@ Partial Class frmConsulta
         Me.butSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.butSalir.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.butSalir.ForeColor = System.Drawing.Color.White
-        Me.butSalir.Image = Global.FANLYC.My.Resources.Resources.go_back482
         Me.butSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.butSalir.Location = New System.Drawing.Point(579, 430)
         Me.butSalir.Name = "butSalir"

@@ -11,7 +11,11 @@
     Private Sub mnuConsultar_Click(sender As System.Object, e As System.EventArgs) Handles mnuConsultar.Click
         Paciente.IdPaciente = grdPacientes.CurrentRow.Cells(0).Value
         frmABMPacientes.iNuevoPaciente = False
+        frmABMPacientes.bConsulta = True
         frmABMPacientes.ShowDialog()
     End Sub
 
+    Private Sub butSalir_Click(sender As System.Object, e As System.EventArgs) Handles butSalir.Click
+        Me.Close()
+    End Sub
 End Class
