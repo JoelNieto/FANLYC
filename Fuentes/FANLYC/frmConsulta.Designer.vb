@@ -40,6 +40,8 @@ Partial Class frmConsulta
         Me.DSetPacientes = New FANLYC.dSetPacientes()
         Me.PacientesMainTableAdapter = New FANLYC.dSetPacientesTableAdapters.PacientesMainTableAdapter()
         Me.butSalir = New System.Windows.Forms.Button()
+        Me.txtConsulta = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.grdPacientes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.mnuConsulta.SuspendLayout()
         CType(Me.PacientesMainBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -58,7 +60,7 @@ Partial Class frmConsulta
         Me.grdPacientes.ContextMenuStrip = Me.mnuConsulta
         Me.grdPacientes.DataSource = Me.PacientesMainBindingSource
         Me.grdPacientes.GridColor = System.Drawing.Color.SkyBlue
-        Me.grdPacientes.Location = New System.Drawing.Point(31, 56)
+        Me.grdPacientes.Location = New System.Drawing.Point(31, 85)
         Me.grdPacientes.MultiSelect = False
         Me.grdPacientes.Name = "grdPacientes"
         Me.grdPacientes.ReadOnly = True
@@ -163,8 +165,9 @@ Partial Class frmConsulta
         Me.butSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.butSalir.Font = New System.Drawing.Font("Segoe UI Light", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.butSalir.ForeColor = System.Drawing.Color.White
+        Me.butSalir.Image = CType(resources.GetObject("butSalir.Image"), System.Drawing.Image)
         Me.butSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.butSalir.Location = New System.Drawing.Point(579, 430)
+        Me.butSalir.Location = New System.Drawing.Point(579, 454)
         Me.butSalir.Name = "butSalir"
         Me.butSalir.Size = New System.Drawing.Size(108, 47)
         Me.butSalir.TabIndex = 1
@@ -172,12 +175,33 @@ Partial Class frmConsulta
         Me.butSalir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.butSalir.UseVisualStyleBackColor = False
         '
+        'txtConsulta
+        '
+        Me.txtConsulta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtConsulta.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtConsulta.Location = New System.Drawing.Point(123, 40)
+        Me.txtConsulta.Name = "txtConsulta"
+        Me.txtConsulta.Size = New System.Drawing.Size(305, 23)
+        Me.txtConsulta.TabIndex = 2
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI Light", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(28, 40)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(89, 20)
+        Me.Label1.TabIndex = 3
+        Me.Label1.Text = "Buscar Por:"
+        '
         'frmConsulta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(719, 513)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.txtConsulta)
         Me.Controls.Add(Me.butSalir)
         Me.Controls.Add(Me.grdPacientes)
         Me.Font = New System.Drawing.Font("Segoe UI Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -190,6 +214,7 @@ Partial Class frmConsulta
         CType(Me.PacientesMainBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DSetPacientes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents grdPacientes As System.Windows.Forms.DataGridView
@@ -208,4 +233,6 @@ Partial Class frmConsulta
     Friend WithEvents mnuConsulta As System.Windows.Forms.ContextMenuStrip
     Friend WithEvents mnuConsultar As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents butSalir As System.Windows.Forms.Button
+    Friend WithEvents txtConsulta As System.Windows.Forms.TextBox
+    Friend WithEvents Label1 As System.Windows.Forms.Label
 End Class

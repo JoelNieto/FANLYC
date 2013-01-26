@@ -4,7 +4,7 @@
         'TODO: This line of code loads data into the 'DSetPacientes.PacientesMain' table. You can move, or remove it, as needed.
         Me.PacientesMainTableAdapter.Fill(Me.DSetPacientes.PacientesMain)
         'TODO: This line of code loads data into the 'DSetPacientes.PacientesMain' table. You can move, or remove it, as needed.
-        Me.PacientesMainTableAdapter.Fill(Me.DSetPacientes.PacientesMain)
+        'Me.PacientesMainTableAdapter.Fill(Me.DSetPacientes.PacientesMain)
         Me.CenterToScreen()
     End Sub
 
@@ -17,5 +17,9 @@
 
     Private Sub butSalir_Click(sender As System.Object, e As System.EventArgs) Handles butSalir.Click
         Me.Close()
+    End Sub
+
+    Private Sub txtConsulta_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtConsulta.TextChanged
+        Me.PacientesMainTableAdapter.FillByText(Me.DSetPacientes.PacientesMain, "%" + txtConsulta.Text.ToString + "%")
     End Sub
 End Class
