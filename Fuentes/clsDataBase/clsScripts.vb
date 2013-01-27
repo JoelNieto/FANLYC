@@ -25,15 +25,17 @@ Public Class clsScripts
         sCampos = sCampos + ")"
         sValores = " VALUES ("
 
-        For Each Valor As String In Valores
-            If Valores.IndexOf(Valor) <> 0 Then
+        For i As Integer = 0 To Valores.Count - 1
+            If i <> 0 Then
                 sValores = sValores + ", "
             End If
-            If Tipo(Valores.IndexOf(Valor)).ToString = "TEXTO" Then
-                Valor = "'" + Valor + "'"
+
+            If Tipo(i).ToString = "TEXTO" Then
+                Valores(i) = "'" + Valores(i).ToString + "'"
             End If
-            sValores = sValores + Valor
+            sValores = sValores + Valores(i)
         Next
+
         sValores = sValores + ")"
 
         sSql = sSql + sCampos + sValores
@@ -102,14 +104,15 @@ Public Class clsScripts
 
         sParametros = " "
 
-        For Each Parametro As String In Parametros
-            If Parametros.IndexOf(Parametro) > 0 Then
+        For i As Integer = 0 To Parametros.Count - 1
+            If i <> 0 Then
                 sParametros = sParametros + ", "
             End If
-            If Tipos(Parametros.IndexOf(Parametro).ToString) = "TEXTO" Then
-                Parametro = "'" + Parametro + "'"
+
+            If Tipos(i).ToString = "TEXTO" Then
+                Parametros(i) = "'" + Parametros(i).ToString + "'"
             End If
-            sParametros = sParametros + Parametro
+            sParametros = sParametros + Parametros(i)
         Next
 
         sSql = sSql + sParametros
