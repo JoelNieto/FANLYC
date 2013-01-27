@@ -209,6 +209,7 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="rptPaciente.rdlc" />
     <EmbeddedResource Include="SplashFanlyc.resx">
       <DependentUpon>SplashFanlyc.vb</DependentUpon>
     </EmbeddedResource>

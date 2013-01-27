@@ -21,4 +21,7 @@
         frmConsulta.ShowDialog()
     End Sub
 
+    Private Sub butReportes_Click(sender As System.Object, e As System.EventArgs) Handles butReportes.Click
+        frmReportes.ShowDialog()
+    End Sub
 End Class

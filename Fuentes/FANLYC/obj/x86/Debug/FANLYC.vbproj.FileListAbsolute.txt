@@ -36,3 +36,6 @@ C:\Fuentes\FANLYC\Fuentes\FANLYC\bin\Debug\libConexiones.dll
 C:\Fuentes\FANLYC\Fuentes\FANLYC\bin\Debug\libConexiones.pdb
 C:\Fuentes\FANLYC\Fuentes\FANLYC\bin\Debug\libConexiones.xml
 C:\Fuentes\FANLYC\Fuentes\FANLYC\obj\x86\Debug\FANLYC.frmConsulta.resources
+C:\Fuentes\FANLYC\Fuentes\FANLYC\obj\x86\Debug\FANLYC.frmReportes.resources
+C:\Fuentes\FANLYC\Fuentes\FANLYC\obj\x86\Debug\RdlCompile.cache
+C:\Fuentes\FANLYC\Fuentes\FANLYC\obj\x86\Debug\RdlCompile.compiled
