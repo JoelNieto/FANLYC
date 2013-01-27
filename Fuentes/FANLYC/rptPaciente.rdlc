@@ -128,7 +128,7 @@
               <Width>0.66134in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.5155in</Width>
+              <Width>0.40092in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>0.84884in</Width>
@@ -137,13 +137,16 @@
               <Width>0.99467in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.98425in</Width>
+              <Width>0.92175in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.08842in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.02592in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>0.98425in</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>1.58842in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -529,7 +532,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Tel Domicilio</Value>
+                              <Value>Teléfonos</Value>
                               <Style>
                                 <FontFamily>Segoe UI Light</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -543,6 +546,43 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox137</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox28">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Padres</Value>
+                              <Style>
+                                <FontFamily>Segoe UI Light</FontFamily>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>SemiBold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox28</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -986,12 +1026,63 @@
                     </Textbox>
                   </CellContents>
                 </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Madre">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Madre.Value</Value>
+                              <Style>
+                                <FontFamily>Segoe UI Light</FontFamily>
+                                <FontSize>8pt</FontSize>
+                              </Style>
+                            </TextRun>
+                            <TextRun>
+                              <Value> / </Value>
+                              <Style>
+                                <FontFamily>Segoe UI Light</FontFamily>
+                                <FontSize>8pt</FontSize>
+                              </Style>
+                            </TextRun>
+                            <TextRun>
+                              <Value>=Fields!Padre.Value</Value>
+                              <Style>
+                                <FontFamily>Segoe UI Light</FontFamily>
+                                <FontSize>8pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Madre</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
               </TablixCells>
             </TablixRow>
           </TablixRows>
         </TablixBody>
         <TablixColumnHierarchy>
           <TablixMembers>
+            <TablixMember />
             <TablixMember />
             <TablixMember />
             <TablixMember />
@@ -1390,7 +1481,7 @@
         <Top>1.1557cm</Top>
         <Left>0.44133cm</Left>
         <Height>1.2cm</Height>
-        <Width>36.9179cm</Width>
+        <Width>37.80394cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
