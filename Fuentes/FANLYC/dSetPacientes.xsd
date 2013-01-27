@@ -190,12 +190,13 @@ WHERE         (PacientesTelef.cod_tipo_telef = 1) AND (PacientesPadres.cod_padre
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ReportPacienteTableAdapter" GeneratorDataComponentClassName="ReportPacienteTableAdapter" Name="ReportPaciente" UserDataComponentName="ReportPacienteTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="FANLYC (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="FANLYC (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT         PacientesHeader.id_paciente AS ID, PacientesHeader.txt_nombre AS Nombre, PacientesHeader.txt_nombre2 AS [Segundo Nombre], PacientesHeader.txt_apellido AS Apellido, PacientesHeader.txt_apellido2 AS [Segundo Apellido], Sexo.txt_sexo AS Sexo, PacientesHeader.edad_anos AS Edad, 
-                          Hospitales.txt_desc_hospital AS Hospital, Diagnosticos.txt_desc_diagnostico AS Diagnósticos, EstadosPaciente.txt_desc_estado AS Estado, Provincias.txt_provincia AS Provincia, Distritos.txt_distrito AS Distrito, Corregimientos.txt_corregimiento AS Corregimiento, PacientesDireccion.txt_direccion_completa AS Dirección, 
-                          PacientesPadres.txt_nombre_padre + '  ' + PacientesPadres.txt_apellidos_padre AS Padre, PacientesPadres_1.txt_nombre_padre + '  ' + PacientesPadres_1.txt_apellidos_padre AS Madre, PacientesTelef.txt_telef AS [Tel. Domicilio], PacientesTelef_1.txt_telef AS [Tel. Celular], PacientesTelef_2.txt_telef AS [Tel. Oficina]
+                          Hospitales.txt_desc_hospital AS Hospital, Doctores.txt_nom_doctor AS Doctor, Diagnosticos.txt_desc_diagnostico AS Diagnósticos, EstadosPaciente.txt_desc_estado AS Estado, Provincias.txt_provincia AS Provincia, Distritos.txt_distrito AS Distrito, Corregimientos.txt_corregimiento AS Corregimiento, 
+                          PacientesDireccion.txt_direccion_completa AS Dirección, PacientesPadres.txt_nombre_padre + '  ' + PacientesPadres.txt_apellidos_padre AS Padre, PacientesPadres_1.txt_nombre_padre + '  ' + PacientesPadres_1.txt_apellidos_padre AS Madre, PacientesTelef.txt_telef AS [Tel. Domicilio], 
+                          PacientesTelef_1.txt_telef AS [Tel. Celular], PacientesTelef_2.txt_telef AS [Tel. Oficina]
 FROM             PacientesHeader INNER JOIN
                           PacientesDireccion ON PacientesHeader.id_paciente = PacientesDireccion.id_paciente INNER JOIN
                           Hospitales ON PacientesHeader.cod_hospital = Hospitales.cod_hospital INNER JOIN
@@ -237,8 +238,39 @@ WHERE         (PacientesPadres.cod_padres = 1) AND (PacientesPadres_1.cod_padres
               <Mapping SourceColumn="Tel. Domicilio" DataSetColumn="Tel_ Domicilio" />
               <Mapping SourceColumn="Tel. Celular" DataSetColumn="Tel_ Celular" />
               <Mapping SourceColumn="Tel. Oficina" DataSetColumn="Tel_ Oficina" />
+              <Mapping SourceColumn="Doctor" DataSetColumn="Doctor" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="FANLYC (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByProvincia" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByProvincia" GeneratorSourceName="FillByProvincia" GetMethodModifier="Public" GetMethodName="GetDataByProvincia" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByProvincia" UserSourceName="FillByProvincia">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT         PacientesHeader.id_paciente AS ID, PacientesHeader.txt_nombre AS Nombre, PacientesHeader.txt_nombre2 AS [Segundo Nombre], PacientesHeader.txt_apellido AS Apellido, PacientesHeader.txt_apellido2 AS [Segundo Apellido], Sexo.txt_sexo AS Sexo, PacientesHeader.edad_anos AS Edad, 
+                          Hospitales.txt_desc_hospital AS Hospital, Doctores.txt_nom_doctor AS Doctor, Diagnosticos.txt_desc_diagnostico AS Diagnósticos, EstadosPaciente.txt_desc_estado AS Estado, Provincias.txt_provincia AS Provincia, Distritos.txt_distrito AS Distrito, Corregimientos.txt_corregimiento AS Corregimiento, 
+                          PacientesDireccion.txt_direccion_completa AS Dirección, PacientesPadres.txt_nombre_padre + '  ' + PacientesPadres.txt_apellidos_padre AS Padre, PacientesPadres_1.txt_nombre_padre + '  ' + PacientesPadres_1.txt_apellidos_padre AS Madre, PacientesTelef.txt_telef AS [Tel. Domicilio], 
+                          PacientesTelef_1.txt_telef AS [Tel. Celular], PacientesTelef_2.txt_telef AS [Tel. Oficina]
+FROM             PacientesHeader INNER JOIN
+                          PacientesDireccion ON PacientesHeader.id_paciente = PacientesDireccion.id_paciente INNER JOIN
+                          Hospitales ON PacientesHeader.cod_hospital = Hospitales.cod_hospital INNER JOIN
+                          PacientesTelef ON PacientesHeader.id_paciente = PacientesTelef.id_paciente INNER JOIN
+                          PacientesPadres ON PacientesHeader.id_paciente = PacientesPadres.id_paciente INNER JOIN
+                          Provincias ON PacientesDireccion.cod_provincia = Provincias.cod_provincia INNER JOIN
+                          Sexo ON PacientesHeader.cod_sexo = Sexo.cod_sexo INNER JOIN
+                          Diagnosticos ON PacientesHeader.cod_diagnostico = Diagnosticos.cod_diagnostico INNER JOIN
+                          PacientesPadres AS PacientesPadres_1 ON PacientesHeader.id_paciente = PacientesPadres_1.id_paciente INNER JOIN
+                          PacientesTelef AS PacientesTelef_1 ON PacientesHeader.id_paciente = PacientesTelef_1.id_paciente INNER JOIN
+                          PacientesTelef AS PacientesTelef_2 ON PacientesHeader.id_paciente = PacientesTelef_2.id_paciente INNER JOIN
+                          Doctores ON PacientesHeader.cod_doctor = Doctores.cod_doctor INNER JOIN
+                          EstadosPaciente ON PacientesHeader.cod_estado_paciente = EstadosPaciente.cod_estado INNER JOIN
+                          Distritos ON Provincias.cod_provincia = Distritos.cod_provincia AND PacientesDireccion.cod_distrito = Distritos.cod_distrito INNER JOIN
+                          Corregimientos ON PacientesDireccion.cod_corregimiento = Corregimientos.cod_corregimiento AND Distritos.cod_provincia = Corregimientos.cod_provincia AND Distritos.cod_distrito = Corregimientos.cod_distrito
+WHERE         (PacientesPadres.cod_padres = 1) AND (PacientesPadres_1.cod_padres = 2) AND (PacientesTelef.cod_tipo_telef = 1) AND (PacientesTelef_1.cod_tipo_telef = 2) AND (PacientesTelef_2.cod_tipo_telef = 3) AND (Provincias.cod_provincia = @provincia)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="provincia" ColumnName="cod_provincia" DataSourceName="FANLYC.dbo.Provincias" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@provincia" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="cod_provincia" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
         </Tables>
         <Sources />
@@ -583,6 +615,13 @@ WHERE         (PacientesPadres.cod_padres = 1) AND (PacientesPadres_1.cod_padres
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Doctor" msprop:Generator_ColumnVarNameInTable="columnDoctor" msprop:Generator_ColumnPropNameInRow="Doctor" msprop:Generator_ColumnPropNameInTable="DoctorColumn" msprop:Generator_UserColumnName="Doctor" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>

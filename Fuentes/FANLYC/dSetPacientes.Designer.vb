@@ -1755,6 +1755,8 @@ Partial Public Class dSetPacientes
         
         Private columnTel__Oficina As Global.System.Data.DataColumn
         
+        Private columnDoctor As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -1943,6 +1945,14 @@ Partial Public Class dSetPacientes
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property DoctorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnDoctor
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -1998,9 +2008,10 @@ Partial Public Class dSetPacientes
                     ByVal Madre As String,  _
                     ByVal Tel__Domicilio As String,  _
                     ByVal Tel__Celular As String,  _
-                    ByVal Tel__Oficina As String) As ReportPacienteRow
+                    ByVal Tel__Oficina As String,  _
+                    ByVal Doctor As String) As ReportPacienteRow
             Dim rowReportPacienteRow As ReportPacienteRow = CType(Me.NewRow,ReportPacienteRow)
-            Dim columnValuesArray() As Object = New Object() {ID, Nombre, Segundo_Nombre, Apellido, Segundo_Apellido, Sexo, Edad, Hospital, Diagnósticos, Estado, Provincia, Distrito, Corregimiento, Dirección, Padre, Madre, Tel__Domicilio, Tel__Celular, Tel__Oficina}
+            Dim columnValuesArray() As Object = New Object() {ID, Nombre, Segundo_Nombre, Apellido, Segundo_Apellido, Sexo, Edad, Hospital, Diagnósticos, Estado, Provincia, Distrito, Corregimiento, Dirección, Padre, Madre, Tel__Domicilio, Tel__Celular, Tel__Oficina, Doctor}
             rowReportPacienteRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowReportPacienteRow)
             Return rowReportPacienteRow
@@ -2048,6 +2059,7 @@ Partial Public Class dSetPacientes
             Me.columnTel__Domicilio = MyBase.Columns("Tel_ Domicilio")
             Me.columnTel__Celular = MyBase.Columns("Tel_ Celular")
             Me.columnTel__Oficina = MyBase.Columns("Tel_ Oficina")
+            Me.columnDoctor = MyBase.Columns("Doctor")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2091,6 +2103,8 @@ Partial Public Class dSetPacientes
             MyBase.Columns.Add(Me.columnTel__Celular)
             Me.columnTel__Oficina = New Global.System.Data.DataColumn("Tel_ Oficina", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnTel__Oficina)
+            Me.columnDoctor = New Global.System.Data.DataColumn("Doctor", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDoctor)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnID}, true))
             Me.columnID.AllowDBNull = false
             Me.columnID.Unique = true
@@ -2120,6 +2134,7 @@ Partial Public Class dSetPacientes
             Me.columnTel__Celular.MaxLength = 10
             Me.columnTel__Oficina.Caption = "Tel. Oficina"
             Me.columnTel__Oficina.MaxLength = 10
+            Me.columnDoctor.MaxLength = 100
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3435,6 +3450,21 @@ Partial Public Class dSetPacientes
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Doctor() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableReportPaciente.DoctorColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Doctor' in table 'ReportPaciente' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableReportPaciente.DoctorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsSegundo_NombreNull() As Boolean
             Return Me.IsNull(Me.tableReportPaciente.Segundo_NombreColumn)
         End Function
@@ -3599,6 +3629,18 @@ Partial Public Class dSetPacientes
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetTel__OficinaNull()
             Me(Me.tableReportPaciente.Tel__OficinaColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsDoctorNull() As Boolean
+            Return Me.IsNull(Me.tableReportPaciente.DoctorColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetDoctorNull()
+            Me(Me.tableReportPaciente.DoctorColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -4778,6 +4820,7 @@ Namespace dSetPacientesTableAdapters
             tableMapping.ColumnMappings.Add("Tel. Domicilio", "Tel_ Domicilio")
             tableMapping.ColumnMappings.Add("Tel. Celular", "Tel_ Celular")
             tableMapping.ColumnMappings.Add("Tel. Oficina", "Tel_ Oficina")
+            tableMapping.ColumnMappings.Add("Doctor", "Doctor")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -4791,47 +4834,93 @@ Namespace dSetPacientesTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT         PacientesHeader.id_paciente AS ID, PacientesHeader.txt_nombre AS N"& _ 
                 "ombre, PacientesHeader.txt_nombre2 AS [Segundo Nombre], PacientesHeader.txt_apel"& _ 
                 "lido AS Apellido, PacientesHeader.txt_apellido2 AS [Segundo Apellido], Sexo.txt_"& _ 
                 "sexo AS Sexo, PacientesHeader.edad_anos AS Edad, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                          Hos"& _ 
-                "pitales.txt_desc_hospital AS Hospital, Diagnosticos.txt_desc_diagnostico AS Diag"& _ 
-                "nósticos, EstadosPaciente.txt_desc_estado AS Estado, Provincias.txt_provincia AS"& _ 
-                " Provincia, Distritos.txt_distrito AS Distrito, Corregimientos.txt_corregimiento"& _ 
-                " AS Corregimiento, PacientesDireccion.txt_direccion_completa AS Dirección, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"   "& _ 
-                "                       PacientesPadres.txt_nombre_padre + '  ' + PacientesPadres"& _ 
-                ".txt_apellidos_padre AS Padre, PacientesPadres_1.txt_nombre_padre + '  ' + Pacie"& _ 
-                "ntesPadres_1.txt_apellidos_padre AS Madre, PacientesTelef.txt_telef AS [Tel. Dom"& _ 
-                "icilio], PacientesTelef_1.txt_telef AS [Tel. Celular], PacientesTelef_2.txt_tele"& _ 
-                "f AS [Tel. Oficina]"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM             PacientesHeader INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"              "& _ 
-                "            PacientesDireccion ON PacientesHeader.id_paciente = PacientesDirecci"& _ 
-                "on.id_paciente INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                          Hospitales ON PacientesHead"& _ 
-                "er.cod_hospital = Hospitales.cod_hospital INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                          "& _ 
-                "PacientesTelef ON PacientesHeader.id_paciente = PacientesTelef.id_paciente INNER"& _ 
-                " JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                          PacientesPadres ON PacientesHeader.id_paciente "& _ 
-                "= PacientesPadres.id_paciente INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                          Provincias O"& _ 
-                "N PacientesDireccion.cod_provincia = Provincias.cod_provincia INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"      "& _ 
-                "                    Sexo ON PacientesHeader.cod_sexo = Sexo.cod_sexo INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                          Diagnosticos ON PacientesHeader.cod_diagnostico = Dia"& _ 
-                "gnosticos.cod_diagnostico INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                          PacientesPadres "& _ 
-                "AS PacientesPadres_1 ON PacientesHeader.id_paciente = PacientesPadres_1.id_pacie"& _ 
-                "nte INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                          PacientesTelef AS PacientesTelef_1 ON "& _ 
-                "PacientesHeader.id_paciente = PacientesTelef_1.id_paciente INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"         "& _ 
-                "                 PacientesTelef AS PacientesTelef_2 ON PacientesHeader.id_pacien"& _ 
-                "te = PacientesTelef_2.id_paciente INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                          Doctores"& _ 
-                " ON PacientesHeader.cod_doctor = Doctores.cod_doctor INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"               "& _ 
-                "           EstadosPaciente ON PacientesHeader.cod_estado_paciente = EstadosPacie"& _ 
-                "nte.cod_estado INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                          Distritos ON Provincias.cod"& _ 
-                "_provincia = Distritos.cod_provincia AND PacientesDireccion.cod_distrito = Distr"& _ 
-                "itos.cod_distrito INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                          Corregimientos ON Pacien"& _ 
-                "tesDireccion.cod_corregimiento = Corregimientos.cod_corregimiento AND Distritos."& _ 
-                "cod_provincia = Corregimientos.cod_provincia AND Distritos.cod_distrito = Correg"& _ 
-                "imientos.cod_distrito"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE         (PacientesPadres.cod_padres = 1) AND (Pacie"& _ 
-                "ntesPadres_1.cod_padres = 2) AND (PacientesTelef.cod_tipo_telef = 1) AND (Pacien"& _ 
-                "tesTelef_1.cod_tipo_telef = 2) AND (PacientesTelef_2.cod_tipo_telef = 3)"
+                "pitales.txt_desc_hospital AS Hospital, Doctores.txt_nom_doctor AS Doctor, Diagno"& _ 
+                "sticos.txt_desc_diagnostico AS Diagnósticos, EstadosPaciente.txt_desc_estado AS "& _ 
+                "Estado, Provincias.txt_provincia AS Provincia, Distritos.txt_distrito AS Distrit"& _ 
+                "o, Corregimientos.txt_corregimiento AS Corregimiento, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                        "& _ 
+                "  PacientesDireccion.txt_direccion_completa AS Dirección, PacientesPadres.txt_no"& _ 
+                "mbre_padre + '  ' + PacientesPadres.txt_apellidos_padre AS Padre, PacientesPadre"& _ 
+                "s_1.txt_nombre_padre + '  ' + PacientesPadres_1.txt_apellidos_padre AS Madre, Pa"& _ 
+                "cientesTelef.txt_telef AS [Tel. Domicilio], "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                          Paciente"& _ 
+                "sTelef_1.txt_telef AS [Tel. Celular], PacientesTelef_2.txt_telef AS [Tel. Oficin"& _ 
+                "a]"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM             PacientesHeader INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                          Pacie"& _ 
+                "ntesDireccion ON PacientesHeader.id_paciente = PacientesDireccion.id_paciente IN"& _ 
+                "NER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                          Hospitales ON PacientesHeader.cod_hospital ="& _ 
+                " Hospitales.cod_hospital INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                          PacientesTelef ON"& _ 
+                " PacientesHeader.id_paciente = PacientesTelef.id_paciente INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"          "& _ 
+                "                PacientesPadres ON PacientesHeader.id_paciente = PacientesPadres"& _ 
+                ".id_paciente INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                          Provincias ON PacientesDirecc"& _ 
+                "ion.cod_provincia = Provincias.cod_provincia INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                       "& _ 
+                "   Sexo ON PacientesHeader.cod_sexo = Sexo.cod_sexo INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                "& _ 
+                "          Diagnosticos ON PacientesHeader.cod_diagnostico = Diagnosticos.cod_dia"& _ 
+                "gnostico INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                          PacientesPadres AS PacientesPadre"& _ 
+                "s_1 ON PacientesHeader.id_paciente = PacientesPadres_1.id_paciente INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&" "& _ 
+                "                         PacientesTelef AS PacientesTelef_1 ON PacientesHeader.i"& _ 
+                "d_paciente = PacientesTelef_1.id_paciente INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                          "& _ 
+                "PacientesTelef AS PacientesTelef_2 ON PacientesHeader.id_paciente = PacientesTel"& _ 
+                "ef_2.id_paciente INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                          Doctores ON PacientesHead"& _ 
+                "er.cod_doctor = Doctores.cod_doctor INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                          Estado"& _ 
+                "sPaciente ON PacientesHeader.cod_estado_paciente = EstadosPaciente.cod_estado IN"& _ 
+                "NER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                          Distritos ON Provincias.cod_provincia = Dist"& _ 
+                "ritos.cod_provincia AND PacientesDireccion.cod_distrito = Distritos.cod_distrito"& _ 
+                " INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                          Corregimientos ON PacientesDireccion.cod_"& _ 
+                "corregimiento = Corregimientos.cod_corregimiento AND Distritos.cod_provincia = C"& _ 
+                "orregimientos.cod_provincia AND Distritos.cod_distrito = Corregimientos.cod_dist"& _ 
+                "rito"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE         (PacientesPadres.cod_padres = 1) AND (PacientesPadres_1.cod_"& _ 
+                "padres = 2) AND (PacientesTelef.cod_tipo_telef = 1) AND (PacientesTelef_1.cod_ti"& _ 
+                "po_telef = 2) AND (PacientesTelef_2.cod_tipo_telef = 3)"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "SELECT         PacientesHeader.id_paciente AS ID, PacientesHeader.txt_nombre AS N"& _ 
+                "ombre, PacientesHeader.txt_nombre2 AS [Segundo Nombre], PacientesHeader.txt_apel"& _ 
+                "lido AS Apellido, PacientesHeader.txt_apellido2 AS [Segundo Apellido], Sexo.txt_"& _ 
+                "sexo AS Sexo, PacientesHeader.edad_anos AS Edad, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                          Hos"& _ 
+                "pitales.txt_desc_hospital AS Hospital, Doctores.txt_nom_doctor AS Doctor, Diagno"& _ 
+                "sticos.txt_desc_diagnostico AS Diagnósticos, EstadosPaciente.txt_desc_estado AS "& _ 
+                "Estado, Provincias.txt_provincia AS Provincia, Distritos.txt_distrito AS Distrit"& _ 
+                "o, Corregimientos.txt_corregimiento AS Corregimiento, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                        "& _ 
+                "  PacientesDireccion.txt_direccion_completa AS Dirección, PacientesPadres.txt_no"& _ 
+                "mbre_padre + '  ' + PacientesPadres.txt_apellidos_padre AS Padre, PacientesPadre"& _ 
+                "s_1.txt_nombre_padre + '  ' + PacientesPadres_1.txt_apellidos_padre AS Madre, Pa"& _ 
+                "cientesTelef.txt_telef AS [Tel. Domicilio], "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                          Paciente"& _ 
+                "sTelef_1.txt_telef AS [Tel. Celular], PacientesTelef_2.txt_telef AS [Tel. Oficin"& _ 
+                "a]"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM             PacientesHeader INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                          Pacie"& _ 
+                "ntesDireccion ON PacientesHeader.id_paciente = PacientesDireccion.id_paciente IN"& _ 
+                "NER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                          Hospitales ON PacientesHeader.cod_hospital ="& _ 
+                " Hospitales.cod_hospital INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                          PacientesTelef ON"& _ 
+                " PacientesHeader.id_paciente = PacientesTelef.id_paciente INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"          "& _ 
+                "                PacientesPadres ON PacientesHeader.id_paciente = PacientesPadres"& _ 
+                ".id_paciente INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                          Provincias ON PacientesDirecc"& _ 
+                "ion.cod_provincia = Provincias.cod_provincia INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                       "& _ 
+                "   Sexo ON PacientesHeader.cod_sexo = Sexo.cod_sexo INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                "& _ 
+                "          Diagnosticos ON PacientesHeader.cod_diagnostico = Diagnosticos.cod_dia"& _ 
+                "gnostico INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                          PacientesPadres AS PacientesPadre"& _ 
+                "s_1 ON PacientesHeader.id_paciente = PacientesPadres_1.id_paciente INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&" "& _ 
+                "                         PacientesTelef AS PacientesTelef_1 ON PacientesHeader.i"& _ 
+                "d_paciente = PacientesTelef_1.id_paciente INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                          "& _ 
+                "PacientesTelef AS PacientesTelef_2 ON PacientesHeader.id_paciente = PacientesTel"& _ 
+                "ef_2.id_paciente INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                          Doctores ON PacientesHead"& _ 
+                "er.cod_doctor = Doctores.cod_doctor INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                          Estado"& _ 
+                "sPaciente ON PacientesHeader.cod_estado_paciente = EstadosPaciente.cod_estado IN"& _ 
+                "NER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                          Distritos ON Provincias.cod_provincia = Dist"& _ 
+                "ritos.cod_provincia AND PacientesDireccion.cod_distrito = Distritos.cod_distrito"& _ 
+                " INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                          Corregimientos ON PacientesDireccion.cod_"& _ 
+                "corregimiento = Corregimientos.cod_corregimiento AND Distritos.cod_provincia = C"& _ 
+                "orregimientos.cod_provincia AND Distritos.cod_distrito = Corregimientos.cod_dist"& _ 
+                "rito"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE         (PacientesPadres.cod_padres = 1) AND (PacientesPadres_1.cod_"& _ 
+                "padres = 2) AND (PacientesTelef.cod_tipo_telef = 1) AND (PacientesTelef_1.cod_ti"& _ 
+                "po_telef = 2) AND (PacientesTelef_2.cod_tipo_telef = 3) AND (Provincias.cod_prov"& _ 
+                "incia = @provincia)"
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@provincia", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "cod_provincia", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4853,6 +4942,32 @@ Namespace dSetPacientesTableAdapters
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
         Public Overloads Overridable Function GetData() As dSetPacientes.ReportPacienteDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As dSetPacientes.ReportPacienteDataTable = New dSetPacientes.ReportPacienteDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillByProvincia(ByVal dataTable As dSetPacientes.ReportPacienteDataTable, ByVal provincia As Integer) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(provincia,Integer)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function GetDataByProvincia(ByVal provincia As Integer) As dSetPacientes.ReportPacienteDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(provincia,Integer)
             Dim dataTable As dSetPacientes.ReportPacienteDataTable = New dSetPacientes.ReportPacienteDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable

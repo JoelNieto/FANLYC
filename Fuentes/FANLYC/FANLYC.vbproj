@@ -147,6 +147,12 @@
     <Compile Include="frmHospital.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmReportes.Designer.vb">
+      <DependentUpon>frmReportes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmTablas.Designer.vb">
       <DependentUpon>frmTablas.vb</DependentUpon>
     </Compile>
@@ -190,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmHospital.resx">
       <DependentUpon>frmHospital.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportes.resx">
+      <DependentUpon>frmReportes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTablas.resx">
       <DependentUpon>frmTablas.vb</DependentUpon>

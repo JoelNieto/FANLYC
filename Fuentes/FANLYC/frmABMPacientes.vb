@@ -523,7 +523,4 @@
         LiberaForma()
     End Sub
 
-    Private Sub cboDiagnostico_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cboDiagnostico.SelectedIndexChanged
-
-    End Sub
 End Class
