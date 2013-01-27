@@ -30,7 +30,6 @@ Partial Class frmHospital
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtNomHospital = New System.Windows.Forms.TextBox()
         Me.butSalir = New System.Windows.Forms.Button()
-        Me.butEliminar = New System.Windows.Forms.Button()
         Me.butAgregar = New System.Windows.Forms.Button()
         Me.grpHospitales.SuspendLayout()
         Me.SuspendLayout()
@@ -41,7 +40,7 @@ Partial Class frmHospital
         Me.lsvHospital.GridLines = True
         Me.lsvHospital.Location = New System.Drawing.Point(50, 31)
         Me.lsvHospital.Name = "lsvHospital"
-        Me.lsvHospital.Size = New System.Drawing.Size(409, 97)
+        Me.lsvHospital.Size = New System.Drawing.Size(409, 110)
         Me.lsvHospital.TabIndex = 0
         Me.lsvHospital.UseCompatibleStateImageBehavior = False
         Me.lsvHospital.View = System.Windows.Forms.View.Details
@@ -108,29 +107,13 @@ Partial Class frmHospital
         Me.butSalir.Font = New System.Drawing.Font("Segoe UI Light", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.butSalir.Image = CType(resources.GetObject("butSalir.Image"), System.Drawing.Image)
         Me.butSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.butSalir.Location = New System.Drawing.Point(125, 265)
+        Me.butSalir.Location = New System.Drawing.Point(254, 265)
         Me.butSalir.Name = "butSalir"
         Me.butSalir.Size = New System.Drawing.Size(91, 23)
         Me.butSalir.TabIndex = 4
         Me.butSalir.Text = "Salir"
         Me.butSalir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.butSalir.UseVisualStyleBackColor = False
-        '
-        'butEliminar
-        '
-        Me.butEliminar.BackColor = System.Drawing.Color.LightCoral
-        Me.butEliminar.FlatAppearance.BorderSize = 0
-        Me.butEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.butEliminar.Font = New System.Drawing.Font("Segoe UI Light", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.butEliminar.Image = CType(resources.GetObject("butEliminar.Image"), System.Drawing.Image)
-        Me.butEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.butEliminar.Location = New System.Drawing.Point(246, 265)
-        Me.butEliminar.Name = "butEliminar"
-        Me.butEliminar.Size = New System.Drawing.Size(91, 23)
-        Me.butEliminar.TabIndex = 3
-        Me.butEliminar.Text = "Eliminar"
-        Me.butEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.butEliminar.UseVisualStyleBackColor = False
         '
         'butAgregar
         '
@@ -155,7 +138,6 @@ Partial Class frmHospital
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(516, 305)
         Me.Controls.Add(Me.butSalir)
-        Me.Controls.Add(Me.butEliminar)
         Me.Controls.Add(Me.butAgregar)
         Me.Controls.Add(Me.grpHospitales)
         Me.Controls.Add(Me.lsvHospital)
@@ -176,6 +158,5 @@ Partial Class frmHospital
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents txtNomHospital As System.Windows.Forms.TextBox
     Friend WithEvents butAgregar As System.Windows.Forms.Button
-    Friend WithEvents butEliminar As System.Windows.Forms.Button
     Friend WithEvents butSalir As System.Windows.Forms.Button
 End Class

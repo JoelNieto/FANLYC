@@ -8,10 +8,7 @@
     Private Sub frmABMPacientes_FormClosing(sender As Object, e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         If bConsulta = False Then
             If bGrabado = False Then
-                If MsgBox("Desea guardar temporal?", MsgBoxStyle.YesNo, "Salvado de Temporal") = MsgBoxResult.Yes Then
-                    GuardaTemporal()
-                    MsgBox("Temporal: " + Paciente.IdPaciente.ToString, MsgBoxStyle.Information)
-                End If
+                LimpiarPacientes(True)
             End If
         End If
         LimpiarForma()
@@ -20,6 +17,7 @@
     Private Sub frmABMPacientes_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
 
         Me.CenterToScreen()
+
         CargaControles()
         InicializaPaciente()
         If iNuevoPaciente = True Then
