@@ -1,6 +1,7 @@
 ﻿Public Class clsPacientes
 
     Private iIdPaciente As Integer
+    Private iIdTemporal As Integer
     Private sNombre As String
     Private sSegundoNombre As String
     Private sApellido As String
@@ -37,6 +38,16 @@
             iIdPaciente = value
         End Set
     End Property
+
+    Public Property IdTemporal As Integer
+        Get
+            Return iIdTemporal
+        End Get
+        Set(value As Integer)
+            iIdTemporal = value
+        End Set
+    End Property
+
 
     Public Property Nombre As String
         Get
