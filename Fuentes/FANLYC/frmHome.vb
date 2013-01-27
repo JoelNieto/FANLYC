@@ -24,4 +24,11 @@
     Private Sub butReportes_Click(sender As System.Object, e As System.EventArgs) Handles butReportes.Click
         frmReportes.ShowDialog()
     End Sub
+
+    Private Sub butSalir_Click(sender As System.Object, e As System.EventArgs) Handles butSalir.Click
+        If MsgBox("Desea Salir?", MsgBoxStyle.YesNo, "Salida") = MsgBoxResult.Yes Then
+            Me.Close()
+        End If
+    End Sub
+
 End Class

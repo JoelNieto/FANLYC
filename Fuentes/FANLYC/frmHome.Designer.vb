@@ -28,12 +28,14 @@ Partial Class frmHome
         Me.butConsultar = New System.Windows.Forms.Button()
         Me.butAgregar = New System.Windows.Forms.Button()
         Me.butTablas = New System.Windows.Forms.Button()
+        Me.butSalir = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.Transparent
+        Me.Panel1.Controls.Add(Me.butSalir)
         Me.Panel1.Controls.Add(Me.butReportes)
         Me.Panel1.Controls.Add(Me.butConsultar)
         Me.Panel1.Controls.Add(Me.butAgregar)
@@ -41,7 +43,7 @@ Partial Class frmHome
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(324, 520)
+        Me.Panel1.Size = New System.Drawing.Size(492, 574)
         Me.Panel1.TabIndex = 0
         '
         'butReportes
@@ -112,13 +114,30 @@ Partial Class frmHome
         Me.butTablas.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.butTablas.UseVisualStyleBackColor = False
         '
+        'butSalir
+        '
+        Me.butSalir.BackColor = System.Drawing.Color.Orange
+        Me.butSalir.FlatAppearance.BorderSize = 0
+        Me.butSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.butSalir.Font = New System.Drawing.Font("Segoe UI Light", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.butSalir.ForeColor = System.Drawing.Color.White
+        Me.butSalir.Image = CType(resources.GetObject("butSalir.Image"), System.Drawing.Image)
+        Me.butSalir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.butSalir.Location = New System.Drawing.Point(278, 33)
+        Me.butSalir.Name = "butSalir"
+        Me.butSalir.Size = New System.Drawing.Size(176, 88)
+        Me.butSalir.TabIndex = 4
+        Me.butSalir.Text = "Salir"
+        Me.butSalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.butSalir.UseVisualStyleBackColor = False
+        '
         'frmHome
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.ClientSize = New System.Drawing.Size(695, 520)
+        Me.ClientSize = New System.Drawing.Size(695, 574)
         Me.Controls.Add(Me.Panel1)
         Me.DoubleBuffered = True
         Me.Font = New System.Drawing.Font("Segoe UI Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -136,5 +155,6 @@ Partial Class frmHome
     Friend WithEvents butAgregar As System.Windows.Forms.Button
     Friend WithEvents butConsultar As System.Windows.Forms.Button
     Friend WithEvents butReportes As System.Windows.Forms.Button
+    Friend WithEvents butSalir As System.Windows.Forms.Button
 
 End Class
