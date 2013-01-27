@@ -24,6 +24,7 @@ Partial Class frmHome
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmHome))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.butReportes = New System.Windows.Forms.Button()
         Me.butConsultar = New System.Windows.Forms.Button()
         Me.butAgregar = New System.Windows.Forms.Button()
         Me.butTablas = New System.Windows.Forms.Button()
@@ -33,14 +34,32 @@ Partial Class frmHome
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.Transparent
+        Me.Panel1.Controls.Add(Me.butReportes)
         Me.Panel1.Controls.Add(Me.butConsultar)
         Me.Panel1.Controls.Add(Me.butAgregar)
         Me.Panel1.Controls.Add(Me.butTablas)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(324, 407)
+        Me.Panel1.Size = New System.Drawing.Size(324, 520)
         Me.Panel1.TabIndex = 0
+        '
+        'butReportes
+        '
+        Me.butReportes.BackColor = System.Drawing.Color.DarkGray
+        Me.butReportes.FlatAppearance.BorderSize = 0
+        Me.butReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.butReportes.Font = New System.Drawing.Font("Segoe UI Light", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.butReportes.ForeColor = System.Drawing.Color.White
+        Me.butReportes.Image = CType(resources.GetObject("butReportes.Image"), System.Drawing.Image)
+        Me.butReportes.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.butReportes.Location = New System.Drawing.Point(45, 399)
+        Me.butReportes.Name = "butReportes"
+        Me.butReportes.Size = New System.Drawing.Size(176, 88)
+        Me.butReportes.TabIndex = 3
+        Me.butReportes.Text = "Reportes"
+        Me.butReportes.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.butReportes.UseVisualStyleBackColor = False
         '
         'butConsultar
         '
@@ -49,7 +68,7 @@ Partial Class frmHome
         Me.butConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.butConsultar.Font = New System.Drawing.Font("Segoe UI Light", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.butConsultar.ForeColor = System.Drawing.Color.White
-        Me.butConsultar.Image = Global.FANLYC.My.Resources.Resources.search48
+        Me.butConsultar.Image = CType(resources.GetObject("butConsultar.Image"), System.Drawing.Image)
         Me.butConsultar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
         Me.butConsultar.Location = New System.Drawing.Point(45, 33)
         Me.butConsultar.Name = "butConsultar"
@@ -66,9 +85,9 @@ Partial Class frmHome
         Me.butAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.butAgregar.Font = New System.Drawing.Font("Segoe UI Light", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.butAgregar.ForeColor = System.Drawing.Color.White
-        Me.butAgregar.Image = Global.FANLYC.My.Resources.Resources.my_tickets48
+        Me.butAgregar.Image = CType(resources.GetObject("butAgregar.Image"), System.Drawing.Image)
         Me.butAgregar.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.butAgregar.Location = New System.Drawing.Point(45, 151)
+        Me.butAgregar.Location = New System.Drawing.Point(45, 155)
         Me.butAgregar.Name = "butAgregar"
         Me.butAgregar.Size = New System.Drawing.Size(176, 88)
         Me.butAgregar.TabIndex = 1
@@ -83,9 +102,9 @@ Partial Class frmHome
         Me.butTablas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.butTablas.Font = New System.Drawing.Font("Segoe UI Light", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.butTablas.ForeColor = System.Drawing.Color.White
-        Me.butTablas.Image = Global.FANLYC.My.Resources.Resources.surveys48
+        Me.butTablas.Image = CType(resources.GetObject("butTablas.Image"), System.Drawing.Image)
         Me.butTablas.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.butTablas.Location = New System.Drawing.Point(45, 269)
+        Me.butTablas.Location = New System.Drawing.Point(45, 277)
         Me.butTablas.Name = "butTablas"
         Me.butTablas.Size = New System.Drawing.Size(176, 88)
         Me.butTablas.TabIndex = 0
@@ -98,9 +117,8 @@ Partial Class frmHome
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.BackgroundImage = Global.FANLYC.My.Resources.Resources.lfanlyc
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.ClientSize = New System.Drawing.Size(695, 407)
+        Me.ClientSize = New System.Drawing.Size(695, 520)
         Me.Controls.Add(Me.Panel1)
         Me.DoubleBuffered = True
         Me.Font = New System.Drawing.Font("Segoe UI Light", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -117,5 +135,6 @@ Partial Class frmHome
     Friend WithEvents butTablas As System.Windows.Forms.Button
     Friend WithEvents butAgregar As System.Windows.Forms.Button
     Friend WithEvents butConsultar As System.Windows.Forms.Button
+    Friend WithEvents butReportes As System.Windows.Forms.Button
 
 End Class

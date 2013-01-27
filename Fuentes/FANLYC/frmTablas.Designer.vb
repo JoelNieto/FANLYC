@@ -28,12 +28,14 @@ Partial Class frmTablas
         Me.butDiagnostico = New System.Windows.Forms.Button()
         Me.butDoctores = New System.Windows.Forms.Button()
         Me.butHospital = New System.Windows.Forms.Button()
+        Me.butSalir = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.butSalir)
         Me.Panel1.Controls.Add(Me.butEstados)
         Me.Panel1.Controls.Add(Me.butDiagnostico)
         Me.Panel1.Controls.Add(Me.butDoctores)
@@ -51,7 +53,7 @@ Partial Class frmTablas
         Me.butEstados.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.butEstados.Font = New System.Drawing.Font("Segoe UI Light", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.butEstados.ForeColor = System.Drawing.Color.White
-        Me.butEstados.Image = Global.FANLYC.My.Resources.Resources.PatientFile
+        Me.butEstados.Image = CType(resources.GetObject("butEstados.Image"), System.Drawing.Image)
         Me.butEstados.ImageAlign = System.Drawing.ContentAlignment.TopCenter
         Me.butEstados.Location = New System.Drawing.Point(160, 15)
         Me.butEstados.Name = "butEstados"
@@ -68,7 +70,7 @@ Partial Class frmTablas
         Me.butDiagnostico.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.butDiagnostico.Font = New System.Drawing.Font("Segoe UI Light", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.butDiagnostico.ForeColor = System.Drawing.Color.White
-        Me.butDiagnostico.Image = Global.FANLYC.My.Resources.Resources.AcceptQualityControl
+        Me.butDiagnostico.Image = CType(resources.GetObject("butDiagnostico.Image"), System.Drawing.Image)
         Me.butDiagnostico.ImageAlign = System.Drawing.ContentAlignment.TopCenter
         Me.butDiagnostico.Location = New System.Drawing.Point(23, 182)
         Me.butDiagnostico.Name = "butDiagnostico"
@@ -85,7 +87,7 @@ Partial Class frmTablas
         Me.butDoctores.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.butDoctores.Font = New System.Drawing.Font("Segoe UI Light", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.butDoctores.ForeColor = System.Drawing.Color.White
-        Me.butDoctores.Image = Global.FANLYC.My.Resources.Resources.DoctorMale
+        Me.butDoctores.Image = CType(resources.GetObject("butDoctores.Image"), System.Drawing.Image)
         Me.butDoctores.ImageAlign = System.Drawing.ContentAlignment.TopCenter
         Me.butDoctores.Location = New System.Drawing.Point(23, 97)
         Me.butDoctores.Name = "butDoctores"
@@ -102,7 +104,7 @@ Partial Class frmTablas
         Me.butHospital.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.butHospital.Font = New System.Drawing.Font("Segoe UI Light", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.butHospital.ForeColor = System.Drawing.Color.White
-        Me.butHospital.Image = Global.FANLYC.My.Resources.Resources.Hospital
+        Me.butHospital.Image = CType(resources.GetObject("butHospital.Image"), System.Drawing.Image)
         Me.butHospital.ImageAlign = System.Drawing.ContentAlignment.TopCenter
         Me.butHospital.Location = New System.Drawing.Point(23, 15)
         Me.butHospital.Name = "butHospital"
@@ -111,6 +113,23 @@ Partial Class frmTablas
         Me.butHospital.Text = "Hospitales"
         Me.butHospital.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.butHospital.UseVisualStyleBackColor = False
+        '
+        'butSalir
+        '
+        Me.butSalir.BackColor = System.Drawing.Color.DarkGray
+        Me.butSalir.FlatAppearance.BorderSize = 0
+        Me.butSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.butSalir.Font = New System.Drawing.Font("Segoe UI Light", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.butSalir.ForeColor = System.Drawing.Color.White
+        Me.butSalir.Image = CType(resources.GetObject("butSalir.Image"), System.Drawing.Image)
+        Me.butSalir.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.butSalir.Location = New System.Drawing.Point(160, 97)
+        Me.butSalir.Name = "butSalir"
+        Me.butSalir.Size = New System.Drawing.Size(103, 59)
+        Me.butSalir.TabIndex = 4
+        Me.butSalir.Text = "Salir"
+        Me.butSalir.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.butSalir.UseVisualStyleBackColor = False
         '
         'frmTablas
         '
@@ -132,4 +151,5 @@ Partial Class frmTablas
     Friend WithEvents butDoctores As System.Windows.Forms.Button
     Friend WithEvents butDiagnostico As System.Windows.Forms.Button
     Friend WithEvents butEstados As System.Windows.Forms.Button
+    Friend WithEvents butSalir As System.Windows.Forms.Button
 End Class

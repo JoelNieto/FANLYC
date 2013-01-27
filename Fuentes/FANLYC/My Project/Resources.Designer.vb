@@ -67,6 +67,27 @@ Namespace My.Resources
             End Get
         End Property
         
+        Friend ReadOnly Property addevent24() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("addevent24", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        Friend ReadOnly Property analysis48() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("analysis48", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        Friend ReadOnly Property analysis64() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("analysis64", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
         Friend ReadOnly Property DoctorMale() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("DoctorMale", resourceCulture)
@@ -76,21 +97,14 @@ Namespace My.Resources
         
         Friend ReadOnly Property go_back48() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("go-back48", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("go_back48", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
         Friend ReadOnly Property go_back481() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("go-back481", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        Friend ReadOnly Property go_back482() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("go-back482", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("go_back481", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -118,14 +132,14 @@ Namespace My.Resources
         
         Friend ReadOnly Property my_tickets48() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("my-tickets48", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("my_tickets48", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
         Friend ReadOnly Property my_tickets64() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("my-tickets64", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("my_tickets64", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -144,6 +158,13 @@ Namespace My.Resources
             End Get
         End Property
         
+        Friend ReadOnly Property search481() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("search481", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
         Friend ReadOnly Property search64() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("search64", resourceCulture)
@@ -151,9 +172,16 @@ Namespace My.Resources
             End Get
         End Property
         
+        Friend ReadOnly Property search641() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("search641", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
         Friend ReadOnly Property stop_red24() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("stop-red24", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("stop_red24", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

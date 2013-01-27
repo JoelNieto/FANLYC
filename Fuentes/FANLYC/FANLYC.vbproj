@@ -295,9 +295,6 @@
     <None Include="Resources\unlocked48.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\go-back48.png" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\clsDataBase\libConexiones.vbproj">
       <Project>{67B8C298-4912-4750-860C-A264426FFF54}</Project>
       <Name>libConexiones</Name>
@@ -305,6 +302,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="fanlyc.ico" />
+    <None Include="Resources\analysis48.png" />
+    <None Include="Resources\analysis64.png" />
+    <None Include="Resources\search481.png" />
+    <None Include="Resources\addevent24.png" />
+    <None Include="Resources\go-back48.png" />
+    <None Include="Resources\search641.png" />
     <None Include="Resources\go-back481.png" />
     <None Include="Resources\search48.png" />
     <None Include="Resources\search64.png" />

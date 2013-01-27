@@ -189,9 +189,27 @@
             objCombo.SeteaIndice(frmABMPacientes.cboDoctor, .Item("Doctor"))
             frmABMPacientes.datFecNac.Value = .Item("Fec Nac")
 
+            Paciente.Nombre = .Item("Nombre")
+            Paciente.SegundoNombre = .Item("Nombre2")
+            Paciente.Apellido = .Item("Apellido")
+            Paciente.SegundoApellido = .Item("Apellido2")
+            Paciente.NomMadre = .Item("NomMadre")
+            Paciente.ApelMadre = .Item("ApelMadre")
+            Paciente.NomPadre = .Item("NomPadre")
+            Paciente.ApelPadre = .Item("ApelPadre")
+            Paciente.Barrio = .Item("Barrio")
+            Paciente.Calle = .Item("Calle")
+            Paciente.Edificio = .Item("Edificio")
+            Paciente.Casa = .Item("Apto")
+            Paciente.DirCompleta = .Item("Direccion")
+            Paciente.TelCel = .Item("TelCel")
+            Paciente.TelDomi = .Item("TelDomi")
+            Paciente.TelOfic = .Item("TelOfic")
         End With
 
         dtPaciente.Clear()
+
+
     End Sub
 
     Public Function AgregaOtroDoctor(NombreDoc As String) As Integer

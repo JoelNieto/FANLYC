@@ -3,8 +3,6 @@
     Private Sub frmConsulta_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'DSetPacientes.PacientesMain' table. You can move, or remove it, as needed.
         Me.PacientesMainTableAdapter.Fill(Me.DSetPacientes.PacientesMain)
-        'TODO: This line of code loads data into the 'DSetPacientes.PacientesMain' table. You can move, or remove it, as needed.
-        'Me.PacientesMainTableAdapter.Fill(Me.DSetPacientes.PacientesMain)
         Me.CenterToScreen()
     End Sub
 

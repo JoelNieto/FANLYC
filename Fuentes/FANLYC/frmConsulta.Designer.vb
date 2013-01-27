@@ -25,6 +25,14 @@ Partial Class frmConsulta
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmConsulta))
         Me.grdPacientes = New System.Windows.Forms.DataGridView()
+        Me.mnuConsulta = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.mnuConsultar = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PacientesMainBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DSetPacientes = New FANLYC.dSetPacientes()
+        Me.PacientesMainTableAdapter = New FANLYC.dSetPacientesTableAdapters.PacientesMainTableAdapter()
+        Me.butSalir = New System.Windows.Forms.Button()
+        Me.txtConsulta = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.IDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ApellidoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -34,14 +42,6 @@ Partial Class frmConsulta
         Me.EstadoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ProvinciaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DistritoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.mnuConsulta = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.mnuConsultar = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PacientesMainBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DSetPacientes = New FANLYC.dSetPacientes()
-        Me.PacientesMainTableAdapter = New FANLYC.dSetPacientesTableAdapters.PacientesMainTableAdapter()
-        Me.butSalir = New System.Windows.Forms.Button()
-        Me.txtConsulta = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.grdPacientes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.mnuConsulta.SuspendLayout()
         CType(Me.PacientesMainBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -66,70 +66,6 @@ Partial Class frmConsulta
         Me.grdPacientes.ReadOnly = True
         Me.grdPacientes.Size = New System.Drawing.Size(656, 353)
         Me.grdPacientes.TabIndex = 0
-        '
-        'IDDataGridViewTextBoxColumn
-        '
-        Me.IDDataGridViewTextBoxColumn.DataPropertyName = "ID"
-        Me.IDDataGridViewTextBoxColumn.HeaderText = "ID"
-        Me.IDDataGridViewTextBoxColumn.Name = "IDDataGridViewTextBoxColumn"
-        Me.IDDataGridViewTextBoxColumn.ReadOnly = True
-        Me.IDDataGridViewTextBoxColumn.Width = 30
-        '
-        'NombreDataGridViewTextBoxColumn
-        '
-        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre"
-        Me.NombreDataGridViewTextBoxColumn.HeaderText = "Nombre"
-        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
-        Me.NombreDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'ApellidoDataGridViewTextBoxColumn
-        '
-        Me.ApellidoDataGridViewTextBoxColumn.DataPropertyName = "Apellido"
-        Me.ApellidoDataGridViewTextBoxColumn.HeaderText = "Apellido"
-        Me.ApellidoDataGridViewTextBoxColumn.Name = "ApellidoDataGridViewTextBoxColumn"
-        Me.ApellidoDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'SexoDataGridViewTextBoxColumn
-        '
-        Me.SexoDataGridViewTextBoxColumn.DataPropertyName = "Sexo"
-        Me.SexoDataGridViewTextBoxColumn.HeaderText = "Sexo"
-        Me.SexoDataGridViewTextBoxColumn.Name = "SexoDataGridViewTextBoxColumn"
-        Me.SexoDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'HospitalDataGridViewTextBoxColumn
-        '
-        Me.HospitalDataGridViewTextBoxColumn.DataPropertyName = "Hospital"
-        Me.HospitalDataGridViewTextBoxColumn.HeaderText = "Hospital"
-        Me.HospitalDataGridViewTextBoxColumn.Name = "HospitalDataGridViewTextBoxColumn"
-        Me.HospitalDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'DoctorDataGridViewTextBoxColumn
-        '
-        Me.DoctorDataGridViewTextBoxColumn.DataPropertyName = "Doctor"
-        Me.DoctorDataGridViewTextBoxColumn.HeaderText = "Doctor"
-        Me.DoctorDataGridViewTextBoxColumn.Name = "DoctorDataGridViewTextBoxColumn"
-        Me.DoctorDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'EstadoDataGridViewTextBoxColumn
-        '
-        Me.EstadoDataGridViewTextBoxColumn.DataPropertyName = "Estado"
-        Me.EstadoDataGridViewTextBoxColumn.HeaderText = "Estado"
-        Me.EstadoDataGridViewTextBoxColumn.Name = "EstadoDataGridViewTextBoxColumn"
-        Me.EstadoDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'ProvinciaDataGridViewTextBoxColumn
-        '
-        Me.ProvinciaDataGridViewTextBoxColumn.DataPropertyName = "Provincia"
-        Me.ProvinciaDataGridViewTextBoxColumn.HeaderText = "Provincia"
-        Me.ProvinciaDataGridViewTextBoxColumn.Name = "ProvinciaDataGridViewTextBoxColumn"
-        Me.ProvinciaDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'DistritoDataGridViewTextBoxColumn
-        '
-        Me.DistritoDataGridViewTextBoxColumn.DataPropertyName = "Distrito"
-        Me.DistritoDataGridViewTextBoxColumn.HeaderText = "Distrito"
-        Me.DistritoDataGridViewTextBoxColumn.Name = "DistritoDataGridViewTextBoxColumn"
-        Me.DistritoDataGridViewTextBoxColumn.ReadOnly = True
         '
         'mnuConsulta
         '
@@ -194,6 +130,72 @@ Partial Class frmConsulta
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "Buscar Por:"
         '
+        'IDDataGridViewTextBoxColumn
+        '
+        Me.IDDataGridViewTextBoxColumn.DataPropertyName = "ID"
+        Me.IDDataGridViewTextBoxColumn.HeaderText = "ID"
+        Me.IDDataGridViewTextBoxColumn.Name = "IDDataGridViewTextBoxColumn"
+        Me.IDDataGridViewTextBoxColumn.ReadOnly = True
+        Me.IDDataGridViewTextBoxColumn.Width = 30
+        '
+        'NombreDataGridViewTextBoxColumn
+        '
+        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre"
+        Me.NombreDataGridViewTextBoxColumn.HeaderText = "Nombre"
+        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
+        Me.NombreDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'ApellidoDataGridViewTextBoxColumn
+        '
+        Me.ApellidoDataGridViewTextBoxColumn.DataPropertyName = "Apellido"
+        Me.ApellidoDataGridViewTextBoxColumn.HeaderText = "Apellido"
+        Me.ApellidoDataGridViewTextBoxColumn.Name = "ApellidoDataGridViewTextBoxColumn"
+        Me.ApellidoDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'SexoDataGridViewTextBoxColumn
+        '
+        Me.SexoDataGridViewTextBoxColumn.DataPropertyName = "Sexo"
+        Me.SexoDataGridViewTextBoxColumn.HeaderText = "Sexo"
+        Me.SexoDataGridViewTextBoxColumn.Name = "SexoDataGridViewTextBoxColumn"
+        Me.SexoDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'HospitalDataGridViewTextBoxColumn
+        '
+        Me.HospitalDataGridViewTextBoxColumn.DataPropertyName = "Hospital"
+        Me.HospitalDataGridViewTextBoxColumn.HeaderText = "Hospital"
+        Me.HospitalDataGridViewTextBoxColumn.Name = "HospitalDataGridViewTextBoxColumn"
+        Me.HospitalDataGridViewTextBoxColumn.ReadOnly = True
+        Me.HospitalDataGridViewTextBoxColumn.Width = 150
+        '
+        'DoctorDataGridViewTextBoxColumn
+        '
+        Me.DoctorDataGridViewTextBoxColumn.DataPropertyName = "Doctor"
+        Me.DoctorDataGridViewTextBoxColumn.HeaderText = "Doctor"
+        Me.DoctorDataGridViewTextBoxColumn.Name = "DoctorDataGridViewTextBoxColumn"
+        Me.DoctorDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'EstadoDataGridViewTextBoxColumn
+        '
+        Me.EstadoDataGridViewTextBoxColumn.DataPropertyName = "Estado"
+        Me.EstadoDataGridViewTextBoxColumn.HeaderText = "Estado"
+        Me.EstadoDataGridViewTextBoxColumn.Name = "EstadoDataGridViewTextBoxColumn"
+        Me.EstadoDataGridViewTextBoxColumn.ReadOnly = True
+        Me.EstadoDataGridViewTextBoxColumn.Width = 150
+        '
+        'ProvinciaDataGridViewTextBoxColumn
+        '
+        Me.ProvinciaDataGridViewTextBoxColumn.DataPropertyName = "Provincia"
+        Me.ProvinciaDataGridViewTextBoxColumn.HeaderText = "Provincia"
+        Me.ProvinciaDataGridViewTextBoxColumn.Name = "ProvinciaDataGridViewTextBoxColumn"
+        Me.ProvinciaDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'DistritoDataGridViewTextBoxColumn
+        '
+        Me.DistritoDataGridViewTextBoxColumn.DataPropertyName = "Distrito"
+        Me.DistritoDataGridViewTextBoxColumn.HeaderText = "Distrito"
+        Me.DistritoDataGridViewTextBoxColumn.Name = "DistritoDataGridViewTextBoxColumn"
+        Me.DistritoDataGridViewTextBoxColumn.ReadOnly = True
+        '
         'frmConsulta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 15.0!)
@@ -221,6 +223,11 @@ Partial Class frmConsulta
     Friend WithEvents DSetPacientes As FANLYC.dSetPacientes
     Friend WithEvents PacientesMainBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents PacientesMainTableAdapter As FANLYC.dSetPacientesTableAdapters.PacientesMainTableAdapter
+    Friend WithEvents mnuConsulta As System.Windows.Forms.ContextMenuStrip
+    Friend WithEvents mnuConsultar As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents butSalir As System.Windows.Forms.Button
+    Friend WithEvents txtConsulta As System.Windows.Forms.TextBox
+    Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents IDDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents NombreDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ApellidoDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -230,9 +237,4 @@ Partial Class frmConsulta
     Friend WithEvents EstadoDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ProvinciaDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DistritoDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents mnuConsulta As System.Windows.Forms.ContextMenuStrip
-    Friend WithEvents mnuConsultar As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents butSalir As System.Windows.Forms.Button
-    Friend WithEvents txtConsulta As System.Windows.Forms.TextBox
-    Friend WithEvents Label1 As System.Windows.Forms.Label
 End Class

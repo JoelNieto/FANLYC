@@ -27,6 +27,7 @@ Partial Class SplashFanlyc
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SplashFanlyc))
         Me.MainLayoutPanel = New System.Windows.Forms.TableLayoutPanel()
         Me.DetailsLayoutPanel = New System.Windows.Forms.TableLayoutPanel()
         Me.Version = New System.Windows.Forms.Label()
@@ -39,7 +40,6 @@ Partial Class SplashFanlyc
         'MainLayoutPanel
         '
         Me.MainLayoutPanel.BackColor = System.Drawing.Color.White
-        Me.MainLayoutPanel.BackgroundImage = Global.FANLYC.My.Resources.Resources.lfanlyc
         Me.MainLayoutPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.MainLayoutPanel.ColumnCount = 2
         Me.MainLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 243.0!))
@@ -97,6 +97,7 @@ Partial Class SplashFanlyc
         Me.ApplicationTitle.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.ApplicationTitle.BackColor = System.Drawing.Color.Transparent
         Me.ApplicationTitle.Font = New System.Drawing.Font("Segoe UI Light", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ApplicationTitle.Image = CType(resources.GetObject("ApplicationTitle.Image"), System.Drawing.Image)
         Me.ApplicationTitle.Location = New System.Drawing.Point(246, 3)
         Me.ApplicationTitle.Name = "ApplicationTitle"
         Me.ApplicationTitle.Size = New System.Drawing.Size(247, 212)

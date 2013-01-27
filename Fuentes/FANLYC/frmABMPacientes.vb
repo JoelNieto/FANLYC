@@ -305,7 +305,7 @@
         End If
     End Sub
 
-    Private Sub cboDiagnostico_ValueMemberChanged(sender As Object, e As System.EventArgs) Handles cboDiagnostico.ValueMemberChanged
+    Private Sub cboDiagnostico_SelectedValueChanged(sender As Object, e As System.EventArgs) Handles cboDiagnostico.SelectedValueChanged
         If IsNumeric(cboDiagnostico.SelectedValue.ToString) Then
             Paciente.Diagnostico = CInt(cboDiagnostico.SelectedValue.ToString)
         End If
@@ -521,5 +521,9 @@
 
     Private Sub butEditar_Click(sender As System.Object, e As System.EventArgs) Handles butEditar.Click
         LiberaForma()
+    End Sub
+
+    Private Sub cboDiagnostico_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cboDiagnostico.SelectedIndexChanged
+
     End Sub
 End Class
