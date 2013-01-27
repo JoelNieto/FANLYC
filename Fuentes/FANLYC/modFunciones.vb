@@ -1,6 +1,7 @@
 ﻿Module modFunciones
 
     Public Sub InicializaPaciente()
+        Paciente.IdTemporal = ObtieneNuevoId(True)
         Paciente.Nombre = ""
         Paciente.SegundoNombre = ""
         Paciente.Apellido = ""
@@ -29,16 +30,28 @@
         Paciente.TelCel = ""
         Paciente.TelDomi = ""
         Paciente.TelOfic = ""
+
     End Sub
 
-    Public Function ObtieneNuevoId() As Integer
+    Public Function ObtieneNuevoId(bTemporal As Boolean) As Integer
+        Dim Tabla As String
+        Dim Campo As String
+
         Dim lFiltros As New List(Of String)
         Dim lCondiciones As New List(Of String)
 
         lFiltros.Add("NO TIENE")
         lCondiciones.Add("NO TIENE")
 
-        ObtieneNuevoId = CInt(objScripts.BuscaUltimoIndice("PacientesHeader", "id_paciente", lCondiciones, lFiltros, objDataBase.Conexion)) + 1
+        If bTemporal = True Then
+            Tabla = "PacientesHeaderTmp"
+            Campo = "id_paciente_tmp"
+        Else
+            Tabla = "PacientesHeader"
+            Campo = "id_paciente"
+        End If
+
+        ObtieneNuevoId = CInt(objScripts.BuscaUltimoIndice(Tabla, Campo, lCondiciones, lFiltros, objDataBase.Conexion)) + 1
 
     End Function
 
@@ -57,7 +70,7 @@
         Dim lParametros As New List(Of String)
         Dim lTipos As New List(Of String)
         With Paciente
-            lParametros.Add(.IdPaciente.ToString) : lTipos.Add("NUMERO")
+            lParametros.Add(.IdTemporal.ToString) : lTipos.Add("NUMERO")
             lParametros.Add(.Hospital.ToString) : lTipos.Add("NUMERO")
             lParametros.Add(.Doctor.ToString) : lTipos.Add("NUMERO")
             lParametros.Add(.Estado.ToString) : lTipos.Add("NUMERO")
@@ -81,7 +94,7 @@
         Dim lTipos As New List(Of String)
 
         With Paciente
-            lParametros.Add(.IdPaciente.ToString) : lTipos.Add("NUMERO")
+            lParametros.Add(.IdTemporal.ToString) : lTipos.Add("NUMERO")
             lParametros.Add(.Provincia.ToString) : lTipos.Add("NUMERO")
             lParametros.Add(.Distrito.ToString) : lTipos.Add("NUMERO")
             lParametros.Add(.Corregimiento.ToString) : lTipos.Add("NUMERO")
@@ -99,7 +112,7 @@
         Dim lTipos As New List(Of String)
 
         With Paciente
-            lParametros.Add(.IdPaciente.ToString) : lTipos.Add("NUMERO")
+            lParametros.Add(.IdTemporal.ToString) : lTipos.Add("NUMERO")
             lParametros.Add(.TelDomi.ToString) : lTipos.Add("TEXTO")
             lParametros.Add(.TelOfic.ToString) : lTipos.Add("TEXTO")
             lParametros.Add(.TelCel.ToString) : lTipos.Add("TEXTO")
@@ -113,7 +126,7 @@
         Dim lTipos As New List(Of String)
 
         With Paciente
-            lParametros.Add(.IdPaciente.ToString) : lTipos.Add("NUMERO")
+            lParametros.Add(.IdTemporal.ToString) : lTipos.Add("NUMERO")
             lParametros.Add(.NomPadre.ToString) : lTipos.Add("TEXTO")
             lParametros.Add(.ApelPadre.ToString) : lTipos.Add("TEXTO")
             lParametros.Add(.NomMadre.ToString) : lTipos.Add("TEXTO")
@@ -128,8 +141,8 @@
         Dim lTipos As New List(Of String)
 
         With Paciente
+            lParametros.Add(.IdTemporal.ToString) : lTipos.Add("NUMERO")
             lParametros.Add(.IdPaciente.ToString) : lTipos.Add("NUMERO")
-            lParametros.Add(iNuevoId.ToString) : lTipos.Add("NUMERO")
         End With
 
         objScripts.EjecutaSP("TrasladaTemporal", lParametros, lTipos, objDataBase.Conexion)
@@ -144,7 +157,7 @@
 
         If bTemporal = True Then
             sSp = "LimpiaTemporal"
-            Id = Paciente.IdPaciente
+            Id = Paciente.IdTemporal
         Else
             sSp = "LimpiaPaciente"
             Id = iNuevoId

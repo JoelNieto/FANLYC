@@ -48,7 +48,6 @@
         End Set
     End Property
 
-
     Public Property Nombre As String
         Get
             Return sNombre

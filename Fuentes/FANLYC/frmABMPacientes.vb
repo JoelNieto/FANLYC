@@ -15,30 +15,24 @@
     End Sub
 
     Private Sub frmABMPacientes_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
-
+        Dim Campo As New List(Of String)
+        Dim Valor As New List(Of String)
+        Dim Tipo As New List(Of String)
         Me.CenterToScreen()
-
         CargaControles()
         InicializaPaciente()
-        If iNuevoPaciente = True Then
-            Dim Filtros As New List(Of String)
-            Dim Condiciones As New List(Of String)
-            Dim Campo As New List(Of String)
-            Dim Valor As New List(Of String)
-            Dim Tipo As New List(Of String)
-            Filtros.Add("NO TIENE")
-            Condiciones.Add("NO TIENE")
-            Paciente.IdPaciente = CInt(objScripts.BuscaUltimoIndice("PacientesHeaderTmp", "id_paciente_tmp", Condiciones, Filtros, objDataBase.Conexion)) + 1
-            Campo.Add("id_paciente_tmp")
-            Valor.Add(Paciente.IdPaciente.ToString)
-            Tipo.Add("NÚMERO")
-            If objScripts.Inserta("PacientesHeaderTmp", Campo, Tipo, Valor, objDataBase.Conexion) = False Then
-                MsgBox("Error al generar temporal")
-            End If
-        Else
+        Campo.Add("id_paciente_tmp")
+        Valor.Add(Paciente.IdTemporal.ToString)
+        Tipo.Add("NÚMERO")
+        If objScripts.Inserta("PacientesHeaderTmp", Campo, Tipo, Valor, objDataBase.Conexion) = False Then
+            MsgBox("Error al generar temporal")
+        End If
+        If iNuevoPaciente = False Then
             RecPaciente = PacienteRecupTableAdapter1.FiltraPacientes(Paciente.IdPaciente)
             RecuperarPaciente(RecPaciente)
             BloqueaForma()
+        Else
+            LiberaForma()
         End If
     End Sub
 
@@ -381,9 +375,7 @@
             Try
                 GuardaTemporal()
                 If iNuevoPaciente = True Then
-                    iNuevoId = ObtieneNuevoId()
-                Else
-                    iNuevoId = Paciente.IdPaciente
+                    Paciente.IdPaciente = ObtieneNuevoId(False)
                 End If
 
                 TrasladaTemporal()
@@ -392,7 +384,7 @@
                 MsgBox("Error al guardar Paciente, inténtelo de nuevo: " + vbCrLf + ex.Message.ToString, MsgBoxStyle.Critical)
                 Exit Sub
             End Try
-            MsgBox("Paciente Grabado con Éxito: " + vbCrLf + "ID: " + iNuevoId.ToString, MsgBoxStyle.OkOnly)
+            MsgBox("Paciente Grabado con Éxito: " + vbCrLf + "ID: " + Paciente.IdPaciente.ToString, MsgBoxStyle.OkOnly)
             bGrabado = True
             Me.Close()
         End If
@@ -484,6 +476,7 @@
         cboSexo.Enabled = False
         datFecNac.Enabled = False
         chkOtroDoc.Enabled = False
+        butGrabar.Enabled = False
     End Sub
 
     Private Sub LiberaForma()
@@ -515,6 +508,8 @@
         cboSexo.Enabled = True
         datFecNac.Enabled = True
         chkOtroDoc.Enabled = True
+        butEditar.Enabled = False
+        butGrabar.Enabled = True
     End Sub
 
     Private Sub butEditar_Click(sender As System.Object, e As System.EventArgs) Handles butEditar.Click
