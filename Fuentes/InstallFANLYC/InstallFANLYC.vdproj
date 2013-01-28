@@ -4,9 +4,9 @@
 "ProjectType" = "8:{978C614F-708E-4E1A-B201-565925725DBA}"
 "IsWebType" = "8:FALSE"
 "ProjectName" = "8:InstallFANLYC"
-"LanguageId" = "3:1033"
+"LanguageId" = "3:3082"
 "CodePage" = "3:1252"
-"UILanguageId" = "3:1033"
+"UILanguageId" = "3:3082"
 "SccProjectName" = "8:"
 "SccLocalPath" = "8:"
 "SccAuxPath" = "8:"
@@ -479,7 +479,7 @@
         }
         "MsiBootstrapper"
         {
-        "LangId" = "3:1033"
+        "LangId" = "3:3082"
         "RequiresElevation" = "11:FALSE"
         }
         "Product"
@@ -487,7 +487,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:FANLYC"
         "ProductCode" = "8:{7A9D753A-31F7-4483-95B4-F71193822365}"
-        "PackageCode" = "8:{4E8E6F06-5D21-4194-ADCB-A7E57B055B40}"
+        "PackageCode" = "8:{EF237963-DC66-4132-8A30-612D853D1BD4}"
         "UpgradeCode" = "8:{4F49ABB1-52EA-4840-AEC7-06CFCB3A8DB1}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -607,6 +607,34 @@
         }
         "Shortcut"
         {
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_68EC48AB89C34D21909982A54F6B78D7"
+            {
+            "Name" = "8:Shortcut to Primary output from FANLYC (Active)"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_D39B98624C1A44EC8AF0AEDAFC3BCC81"
+            "Folder" = "8:_5839CFBF03E54DE791429243FACC9144"
+            "WorkingFolder" = "8:_9F4143463E3F4B6787640A88DFA3D6B7"
+            "Icon" = "8:"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_A5EB5A79745A42B6AFBE0753D7846FB2"
+            {
+            "Name" = "8:Shortcut to Primary output from FANLYC (Active)"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_D39B98624C1A44EC8AF0AEDAFC3BCC81"
+            "Folder" = "8:_71AC304C3B464E7485863097E73A1EE7"
+            "WorkingFolder" = "8:_9F4143463E3F4B6787640A88DFA3D6B7"
+            "Icon" = "8:"
+            "Feature" = "8:"
+            }
         }
         "UserInterface"
         {
