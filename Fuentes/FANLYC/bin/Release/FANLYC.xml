@@ -1,0 +1,124 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+FANLYC
+</name>
+</assembly>
+<members>
+<member name="P:FANLYC.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:FANLYC.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:FANLYC.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="T:FANLYC.dSetPacientes.PacientesMainDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:FANLYC.dSetPacientes.HospitalesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:FANLYC.dSetPacientes.PacienteRecupDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:FANLYC.dSetPacientes.ReportPacienteDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:FANLYC.dSetPacientes.PacientesMainRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:FANLYC.dSetPacientes.HospitalesRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:FANLYC.dSetPacientes.PacienteRecupRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:FANLYC.dSetPacientes.ReportPacienteRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:FANLYC.dSetPacientes.PacientesMainRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:FANLYC.dSetPacientes.HospitalesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:FANLYC.dSetPacientes.PacienteRecupRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:FANLYC.dSetPacientes.ReportPacienteRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:FANLYC.dSetPacientes">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:FANLYC.dSetPacientesTableAdapters.PacientesMainTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:FANLYC.dSetPacientesTableAdapters.HospitalesTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:FANLYC.dSetPacientesTableAdapters.PacienteRecupTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:FANLYC.dSetPacientesTableAdapters.ReportPacienteTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="M:FANLYC.dSetPacientesTableAdapters.TableAdapterManager.UpdateUpdatedRows(FANLYC.dSetPacientes,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Update rows in top-down order.
+</summary>
+</member><member name="M:FANLYC.dSetPacientesTableAdapters.TableAdapterManager.UpdateInsertedRows(FANLYC.dSetPacientes,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Insert rows in top-down order.
+</summary>
+</member><member name="M:FANLYC.dSetPacientesTableAdapters.TableAdapterManager.UpdateDeletedRows(FANLYC.dSetPacientes,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Delete rows in bottom-up order.
+</summary>
+</member><member name="M:FANLYC.dSetPacientesTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member><member name="M:FANLYC.dSetPacientesTableAdapters.TableAdapterManager.UpdateAll(FANLYC.dSetPacientes)">
+	<summary>
+Update all changes to the dataset.
+</summary>
+</member><member name="T:FANLYC.dSetPacientesTableAdapters.TableAdapterManager.UpdateOrderOption">
+	<summary>
+Update Order Option
+</summary>
+</member><member name="T:FANLYC.dSetPacientesTableAdapters.TableAdapterManager.SelfReferenceComparer">
+	<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member><member name="T:FANLYC.dSetPacientesTableAdapters.TableAdapterManager">
+	<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+</members>
+</doc>
